@@ -90,7 +90,7 @@ I build **production-ready mobile and backend applications** that scale. With 4 
 
 **Tech:** Python, Flutter (Riverpod), ChromaDB, LangChain, LLM APIs
 
----
+<!-- ---
 
 ## 📊 GitHub Stats
 
@@ -104,7 +104,7 @@ I build **production-ready mobile and backend applications** that scale. With 4 
 
 </div>
 
----
+--- -->
 
 ## 🎯 What I Offer
 
