@@ -5,9 +5,8 @@
 ### 👋 Full-Stack Product Developer | Mobile • Backend • AI
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](YOUR_PORTFOLIO_URL)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarun-naga-sai/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tarunnagasai@icloud.com)
 </div>
 
 ---
@@ -21,7 +20,7 @@ I build **production-ready mobile and backend applications** that scale. With 4 
 - 🎯 Specialized in cross-platform mobile development with Flutter
 - 🤖 Exploring AI/ML integration with LLMs and RAG architecture
 - 💡 Passionate about creating seamless user experiences
-- 📫 Reach me at: **YOUR_EMAIL@example.com**
+- 📫 Reach me at: **tarunnagasai@icloud.com**
 
 ---
 
@@ -57,6 +56,18 @@ I build **production-ready mobile and backend applications** that scale. With 4 
 
 ## 💼 Featured Projects
 
+### 🤖 [AI-Powered Projects](YOUR_AI_PROJECTS_LINK)
+> Personal projects showcasing AI/ML capabilities
+
+- 🎮 **Pokemon AI**: RAG architecture with vector embeddings and LLM integration
+- 💰 **Crypto AI**: Real-time market analysis with intelligent prompting
+- 🃏 **Flutter GenUI Templates**: GenUI implementation, A2UI interactions and GenUI with own selected.  
+- 🧠 Demonstrates advanced AI integration capabilities for client projects
+
+**Tech:** Python, Flutter (Riverpod), ChromaDB, LangChain, LLM APIs
+
+---
+
 ### 📱 [HealthPass](YOUR_HEALTHPASS_LINK)
 > Enterprise health & wellness mobile application
 
@@ -80,15 +91,6 @@ I build **production-ready mobile and backend applications** that scale. With 4 
 **Tech:** Flutter (Bloc), NestJS, PostgreSQL, Firebase Realtime DB
 
 ---
-
-### 🤖 [AI-Powered Projects](YOUR_AI_PROJECTS_LINK)
-> Personal projects showcasing AI/ML capabilities
-
-- 🎮 **Pokemon AI**: RAG architecture with vector embeddings and LLM integration
-- 💰 **Crypto AI**: Real-time market analysis with intelligent prompting
-- 🧠 Demonstrates advanced AI integration capabilities for client projects
-
-**Tech:** Python, Flutter (Riverpod), ChromaDB, LangChain, LLM APIs
 
 <!-- ---
 
@@ -139,10 +141,9 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-FF5722?style=for-the-badge)](YOUR_PORTFOLIO_URL)
-[![Email](https://img.shields.io/badge/📧_Email-Contact_Me-D14836?style=for-the-badge)](mailto:YOUR_EMAIL)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Connect-0077B5?style=for-the-badge)](YOUR_LINKEDIN_URL)
-
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](YOUR_PORTFOLIO_URL)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarun-naga-sai/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tarunnagasai@icloud.com)
 </div>
 
 ---
@@ -150,7 +151,5 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 <div align="center">
 
 ### 💡 *"Debug the world, if needed, to make it work"* 💪
-
-![Profile Views](https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&color=70a5fd&style=for-the-badge)
 
 </div>
