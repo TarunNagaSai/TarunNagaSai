@@ -3,68 +3,57 @@
 <div align="center">
 
 ### 👋 Full-Stack Product Developer | Mobile • Backend • AI
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](YOUR_PORTFOLIO_URL)
+<!-- 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarun-naga-sai/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tarunnagasai@icloud.com)
+[![Email](https://img.shields.io/badge/Email-3693F3?style=for-the-badge&logo=icloud&logoColor=white)](mailto:tarunnagasai@icloud.com) -->
 </div>
 
 ---
 
 ## 🚀 About Me
 
-I build **production-ready mobile and backend applications** that scale. With 4 years of experience specializing in Flutter, AI integration, and full-stack solutions, I transform ideas into reality—handling everything from architecture to deployment.
+I build **production-ready mobile and backend applications** that scale. With **4 years** of experience specializing in Flutter, Firebase, AI integration, and full-stack solutions, I transform ideas into reality—handling everything from architecture to deployment.
 
 - 🔭 Currently working on AI-powered mobile applications
 - 💼 Available for freelance projects
 - 🎯 Specialized in cross-platform mobile development with Flutter
 - 🤖 Exploring AI/ML integration with LLMs and RAG architecture
 - 💡 Passionate about creating seamless user experiences
-- 📫 Reach me at: **tarunnagasai@icloud.com**
-
 ---
 
 ## 🛠️ Tech Stack
 
-### Mobile Development
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Bloc](https://img.shields.io/badge/Bloc-0175C2?style=for-the-badge&logo=flutter&logoColor=white)
-![GetX](https://img.shields.io/badge/GetX-8B5CF6?style=for-the-badge&logo=flutter&logoColor=white)
-![Riverpod](https://img.shields.io/badge/Riverpod-0175C2?style=for-the-badge&logo=flutter&logoColor=white)
+| **Mobile Development**                                                                                       | **Backend Development**                                                                                       | **Databases**                                                                                                       | **AI/ML & Tools**                                                                                                |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| ![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge\&logo=dart\&logoColor=white)            | ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge\&logo=firebase\&logoColor=black)    | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge\&logo=postgresql\&logoColor=white) | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)          |
+|      ![FlutterFlow](https://img.shields.io/badge/FlutterFlow-7B61FF?style=for-the-badge&logo=flutter&logoColor=white) | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge\&logo=fastapi\&logoColor=white)    | ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge\&logo=mongodb\&logoColor=white)          | ![LangChain](https://img.shields.io/badge/LangChain-121212?style=for-the-badge\&logo=chainlink\&logoColor=white) |
+|  ![Bloc](https://img.shields.io/badge/Bloc-0175C2?style=for-the-badge\&logo=flutter\&logoColor=white)     | ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge\&logo=nodedotjs\&logoColor=white)  | ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6F00?style=for-the-badge\&logo=databricks\&logoColor=white)     | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge\&logo=docker\&logoColor=white)          |
+| ![GetX](https://img.shields.io/badge/GetX-8B5CF6?style=for-the-badge\&logo=flutter\&logoColor=white)       |  ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge\&logo=nestjs\&logoColor=white)                                                        |                                                              | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge\&logo=git\&logoColor=white)                   |
+| ![Riverpod](https://img.shields.io/badge/Riverpod-0175C2?style=for-the-badge\&logo=flutter\&logoColor=white)| ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge\&logo=supabase\&logoColor=white) |                                                                                                                     | ![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge\&logo=google-cloud\&logoColor=white) |
 
-### Backend Development
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 
-### Databases
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6F00?style=for-the-badge&logo=databricks&logoColor=white)
 
-### AI/ML & Tools
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-121212?style=for-the-badge&logo=chainlink&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 
----
 
-## 💼 Featured Projects
+## 🏗️ Featured Projects
 
-### 🤖 [AI-Powered Projects](YOUR_AI_PROJECTS_LINK)
+### 🤖 [AI-Powered Projects]()
 > Personal projects showcasing AI/ML capabilities
 
-- 🎮 **Pokemon AI**: RAG architecture with vector embeddings and LLM integration
-- 💰 **Crypto AI**: Real-time market analysis with intelligent prompting
-- 🃏 **Flutter GenUI Templates**: GenUI implementation, A2UI interactions and GenUI with own selected.  
+- 🎮 **[Pokemon AI](https://github.com/TarunNagaSai/Pokemon-AI)**: RAG architecture with vector embeddings and LLM integration.
+- 💰 **[Crypto AI](https://github.com/TarunNagaSai/gen_ai)**: Real-time market analysis with intelligent prompting.
+- 🃏 **[GenUI Templates](https://github.com/TarunNagaSai/Gen-UI-Templates)**: GenUI implementation, A2UI interactions and GenUI with own selected.  
+- 🃏 **[Flutter Animations](https://github.com/TarunNagaSai/Flutter-Animations)**: Smooth animations, scrolling effects, Animated widgets and many more.
 - 🧠 Demonstrates advanced AI integration capabilities for client projects
 
 **Tech:** Python, Flutter (Riverpod), ChromaDB, LangChain, LLM APIs
+
+---
+
+## ✍️ Blogs
+> Case studies
+
+- 👾 **[Flutter GenUI -1 ](https://medium.com/p/ab26f4c177ff)**: Medium blog explaining about GenUI integration. 
 
 ---
 
@@ -141,7 +130,6 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white)](YOUR_PORTFOLIO_URL)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tarun-naga-sai/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:tarunnagasai@icloud.com)
 </div>
