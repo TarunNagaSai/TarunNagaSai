@@ -1,0 +1,47 @@
+## The story
+
+BumpedIn is a social proximity app. You open it, and you see people in
+your community — within a radius you choose — who you can connect with.
+Tap one, start a conversation, in real time.
+
+The challenge: doing all of that without draining the user's battery, and
+keeping the chat snappy even on a weak network.
+
+## What I built
+
+- The **full Flutter app** for iOS and Android.
+- **Background location tracking** that respects battery — not constantly
+  polling, but smart enough to pick up movement.
+- **Real-time chat** over Socket.IO with a Firebase fallback.
+- **Radius-based discovery** with adjustable 5–10km filtering.
+- **Push notifications** for new connections and messages.
+
+## How it works
+
+Location is the hardest piece. iOS and Android both penalize apps that
+poll GPS aggressively, and users notice the battery drain immediately. I
+built a tiered system: significant location changes trigger updates, and
+the app uses Geofencing where possible so the OS does the work instead of
+the app.
+
+For chat, **Socket.IO** handles the live messaging when both users are
+online, and **Firebase Realtime DB** persists messages so they sync the
+moment a user reconnects. Firebase Functions handle the server-side
+event work (like notifying recipients).
+
+## Stack
+
+**Mobile** — Flutter, Dart, Bloc (state).
+
+**Realtime** — Socket.IO, Firebase Realtime DB, Firebase Functions, FCM
+(push).
+
+**Location** — Background geolocation, Geofencing, custom radius
+filtering.
+
+## Outcomes
+
+- **Shipped to both App Stores.**
+- Real-time chat working reliably across iOS and Android.
+- Battery-friendly background location — a feature that's notoriously
+  hard to get right.

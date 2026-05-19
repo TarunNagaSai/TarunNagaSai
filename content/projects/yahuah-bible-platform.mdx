@@ -1,0 +1,86 @@
+## The story
+
+The Yahuah Bible Platform is a multi-platform Bible study system — a website,
+an admin panel, a mobile app, and a translation engine. It's used today by
+real people studying scripture.
+
+The hardest part wasn't the app. It was the translation.
+
+The client needed the Bible translated into French, German, Italian, and
+Brazilian Portuguese. The catch: every Hebrew or Greek "sacred noun" — the
+original-language names of God, places, and concepts — had to stay **exactly
+where it appears in every verse**. Standard translation APIs would happily
+move them, drop them, or quietly distort them. For a sacred text, that's
+unacceptable.
+
+So I built something custom.
+
+## What I built
+
+The full system, across three phases:
+
+- **A Laravel-powered website** with the complete Old and New Testament, inline
+  Strong's numbers, parallel translations, cross-references, and search.
+- **An admin panel** for uploading and managing translations, lexicons, and
+  Strong's entries — with real-time sync to the web app and PWA.
+- **An offline-first PWA**, wrapped in a Flutter shell so it ships as a native
+  app on iOS, Android, Windows, and macOS.
+- **An AI translation pipeline** that runs on GPU servers and translates
+  60,000+ verses with zero errors.
+
+The pipeline is what I'd call the flagship.
+
+## How the translation pipeline works
+
+Plainly: I built a machine that reads the English Bible, finds where every
+sacred Hebrew/Greek word sits in each verse, lets an AI translate the
+surrounding language, and then puts the sacred words back into the exact
+right slots in the new language.
+
+The technical version:
+
+- **ETL stage.** A Python pipeline extracts all 31,000+ verses and builds a
+  high-precision semantic map of where each sacred noun sits. It uses
+  Unicode regex (Hebrew block `֐-׿`) to find them.
+- **Sequence matching.** When translating, I use Ratcliff/Obershelp
+  positional word replacement (`difflib`) to put each sacred noun back in
+  its correct location in the translated verse.
+- **The "Leviticus Shift" guardrail.** A `matcher.ratio()` similarity check
+  catches misalignments — if the translated verse drifts below 40%
+  similarity to the original structure, it's flagged for human review.
+- **A three-layer noise filter** caught 7,300+ false positives that would
+  otherwise have slipped through.
+- **DAG orchestration on RunPod.** A custom directed acyclic graph
+  coordinates the GPU work. CPU preprocessing runs in parallel, but I gate
+  GPU inference with a mutex so only one pipeline accesses vLLM at a time —
+  no contention, zero idle GPU.
+- **Async POST thread pool.** Translated verses are pushed back to the
+  Laravel API in the background, and the container terminates itself the
+  moment the work is done — zero wasted compute.
+- **Human-in-the-loop review.** All AI output lands in a staging database
+  first. An admin reviews and triggers publish — nothing reaches production
+  until a human says so.
+
+## Stack
+
+**AI/inference** — vLLM (PagedAttention, KV cache), Gemma 4 31B
+(full-precision, unquantized), NVIDIA RTX 6000 Blackwell 96GB, RunPod
+serverless GPU.
+
+**Pipeline** — Python, custom DAG, Ratcliff/Obershelp matching, async
+thread pool.
+
+**Product** — Laravel 10, MySQL, Sanctum auth, PHP 8.1+, Flutter (PWA
+wrapper), Service Workers, IndexedDB, Web App Manifest.
+
+## Outcomes
+
+- **60,000+ verses** translated end-to-end.
+- **54,409 word replacements** verified.
+- **0% error rate** in production output.
+- The architecture generalizes — adding a new Latin-script language is now a
+  config change, not a rewrite.
+
+I also published a long-form engineering case study on the pipeline. The
+[Medium piece](https://medium.com/@tarunnagasai) covers the DAG, the
+guardrails, and the cost engineering in detail.

@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: theme('colors.bg');
+    color: theme('colors.fg');
+    font-family: theme('fontFamily.sans');
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  ::selection {
+    background: theme('colors.accent');
+    color: theme('colors.bg');
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.accent');
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  /* Subtle grain — adds depth without color */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.025;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Ambient gradient orbs — warm + cool, very faint. Match theme accent + slate. */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(60rem 40rem at 15% -10%, rgba(91, 163, 208, 0.09), transparent 60%),
+      radial-gradient(50rem 38rem at 95% 110%, rgba(50, 80, 115, 0.07), transparent 60%),
+      radial-gradient(40rem 30rem at 50% 50%, rgba(91, 163, 208, 0.02), transparent 70%);
+  }
+}
+
+@layer components {
+  .prose-custom {
+    @apply max-w-prose text-fg/90 leading-relaxed;
+  }
+  .prose-custom p {
+    @apply mb-6;
+  }
+  .prose-custom h2 {
+    @apply text-h2 font-medium mt-16 mb-4 text-fg;
+  }
+  .prose-custom h3 {
+    @apply text-xl font-medium mt-12 mb-3 text-fg;
+  }
+  .prose-custom ul {
+    @apply mb-6 space-y-2 pl-5 list-disc marker:text-muted;
+  }
+  .prose-custom ol {
+    @apply mb-6 space-y-2 pl-5 list-decimal marker:text-muted;
+  }
+  .prose-custom a {
+    @apply text-fg underline decoration-border underline-offset-4 hover:decoration-accent transition-colors;
+  }
+  .prose-custom strong {
+    @apply text-fg font-medium;
+  }
+  .prose-custom code {
+    @apply font-mono text-[0.875em] text-accent bg-border/40 px-1.5 py-0.5 rounded;
+  }
+  .prose-custom blockquote {
+    @apply border-l-2 border-border pl-6 my-8 text-subtle italic;
+  }
+  .prose-custom hr {
+    @apply border-border my-12;
+  }
+}
+
+@layer utilities {
+  .hairline {
+    @apply h-px bg-border;
+  }
+}
