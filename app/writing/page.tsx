@@ -54,11 +54,11 @@ export default function WritingPage() {
                     </div>
                   </div>
 
-                  <div className="col-span-6 sm:col-span-1 font-mono text-xs text-muted pt-2">
+                  <div className="col-span-10 sm:col-span-1 font-mono text-xs text-muted pt-2">
                     {a.date}
                   </div>
 
-                  <div className="col-span-6 sm:col-span-1 flex items-start justify-end pt-2">
+                  <div className="col-span-2 sm:col-span-1 flex items-start justify-end pt-2">
                     <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
                 </div>

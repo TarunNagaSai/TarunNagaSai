@@ -103,8 +103,8 @@ export default function AboutPage() {
         </Reveal>
 
         <section className="mt-32 border-t border-border pt-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
-            <div className="md:col-span-3">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-10">
+            <div className="sm:col-span-4 md:col-span-3">
               <p className="font-mono text-xs text-muted tracking-wider uppercase">
                 Skills
               </p>
@@ -119,7 +119,7 @@ export default function AboutPage() {
                 to see them in context.
               </p>
             </div>
-            <div className="md:col-span-9 space-y-10">
+            <div className="sm:col-span-8 md:col-span-9 space-y-10">
               {SKILLS.map((g, i) => (
                 <Reveal key={g.group} delay={Math.min(i * 0.04, 0.16)}>
                   <h3 className="text-xs font-mono uppercase tracking-wider text-muted mb-4">

@@ -12,35 +12,35 @@ export interface Article {
 export const articles: Article[] = [
   {
     title: 'Scaling Sacred Texts: Building a High-Throughput Translation Pipeline with Gemma 4 31B and vLLM',
-    href: SITE.social.medium,
-    date: '2025',
+    href: "https://substack.com/home/post/p-197830805",
+    date: '2026',
     teaser:
       'A deep engineering walkthrough of the Yahuah AI pipeline — how I translated 60,000 verses with zero errors using a custom DAG, GPU mutex gating, and a three-layer noise filter that caught 7,300+ false positives.',
     tags: ['vLLM', 'Gemma', 'DAG', 'Engineering'],
     featured: true,
   },
   {
-    title: 'Migrating an Offline-First Flutter App from State-Heavy to Data-Driven Architecture',
-    href: SITE.social.medium,
+    title: 'The Flutter Architecture Mistake That Worked in Production — Until It Didn’t',
+    href: "https://medium.com/@tarunnagasai007/the-flutter-architecture-mistake-that-worked-in-production-until-it-didnt-c8a7c9577078",
     date: '2024',
     teaser:
-      'The story of rewriting Horeb. Why I moved off Bloc-as-data-warehouse, why ObjectBox won over Hive/Isar/Drift, and how a cleaner architecture cut memory use by 64% on its own.',
+      'Migrating an offline-first Flutter app from state-heavy architecture to a data-driven design using Bloc, ObjectBox, and lazy loading..',
     tags: ['Flutter', 'ObjectBox', 'Architecture'],
     featured: true,
   },
   {
     title: 'Building a Mental Firewall Against AI Dependency',
-    href: SITE.social.medium,
-    date: '2024',
+    href: "https://medium.com/write-a-catalyst/i-built-a-mental-firewall-to-stop-chatgpt-from-hijacking-my-brain-ea0b4b7a6ef3",
+    date: '2025',
     teaser:
       'I noticed I was outsourcing my thinking to ChatGPT. Seven habits I built to use AI as a tool without losing the muscle of reasoning for myself.',
-    tags: ['AI', 'Reflection'],
+    tags: ['AI', 'ChatGPT', 'Reflection'],
     featured: false,
   },
   {
     title: 'Flutter GenUI — A Closer Look',
     href: SITE.external.genUiArticle,
-    date: '2024',
+    date: '2025',
     teaser:
       'A research dive into Flutter\'s GenUI package — how AI-driven UI generation actually works under the hood, plus a custom YouTube CatalogItem and AI tool I built to extend it.',
     tags: ['Flutter', 'GenUI', 'Firebase AI'],

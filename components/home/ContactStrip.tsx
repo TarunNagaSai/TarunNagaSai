@@ -23,7 +23,7 @@ export function ContactStrip() {
           <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4">
             <a
               href={mailto}
-              className="group inline-flex items-center gap-2 text-xl sm:text-2xl font-medium text-fg hover:text-accent transition-colors"
+              className="group inline-flex flex-wrap items-center gap-2 text-lg sm:text-2xl font-medium text-fg hover:text-accent transition-colors break-all"
             >
               <span className="border-b border-border group-hover:border-accent transition-colors pb-0.5">
                 {SITE.display.email}

@@ -39,12 +39,12 @@ export default function ContactPage() {
             href={mailto}
             className="group block border-y border-border py-12 -mx-6 sm:-mx-8 px-6 sm:px-8 hover:bg-border/30 transition-colors"
           >
-            <div className="flex items-center justify-between gap-6">
-              <div>
+            <div className="flex items-center justify-between gap-4 sm:gap-6">
+              <div className="min-w-0 flex-1">
                 <p className="font-mono text-xs text-muted tracking-wider uppercase mb-3">
                   Email
                 </p>
-                <p className="text-2xl sm:text-4xl font-medium tracking-tight text-fg group-hover:text-accent transition-colors break-all">
+                <p className="text-xl sm:text-4xl font-medium tracking-tight text-fg group-hover:text-accent transition-colors break-all">
                   {SITE.display.email}
                 </p>
               </div>
@@ -53,26 +53,26 @@ export default function ContactPage() {
           </a>
         </Reveal>
 
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-12 gap-10">
-          <Reveal className="md:col-span-3">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-12 gap-10">
+          <Reveal className="sm:col-span-4 md:col-span-3">
             <p className="font-mono text-xs text-muted tracking-wider uppercase">
               Elsewhere
             </p>
           </Reveal>
-          <div className="md:col-span-9 space-y-0">
+          <div className="sm:col-span-8 md:col-span-9 space-y-0">
             {LINKS.filter((l) => !l.primary).map((link, i) => (
               <Reveal key={link.href} delay={i * 0.05}>
                 <a
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between gap-6 py-6 border-t border-border hover:border-accent transition-colors"
+                  className="group flex items-center justify-between gap-4 sm:gap-6 py-6 border-t border-border hover:border-accent transition-colors"
                 >
-                  <div className="flex items-baseline gap-6">
-                    <span className="font-mono text-xs uppercase tracking-wider text-muted w-20 shrink-0">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 min-w-0 flex-1">
+                    <span className="font-mono text-xs uppercase tracking-wider text-muted sm:w-20 shrink-0">
                       {link.label}
                     </span>
-                    <span className="text-lg sm:text-xl text-fg group-hover:text-accent transition-colors">
+                    <span className="text-base sm:text-xl text-fg group-hover:text-accent transition-colors break-all">
                       {link.value}
                     </span>
                   </div>

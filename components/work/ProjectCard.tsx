@@ -42,12 +42,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        <div className="col-span-6 sm:col-span-2 font-mono text-xs text-muted pt-2">
+        <div className="col-span-9 sm:col-span-2 font-mono text-xs text-muted pt-2">
           <div>{project.year}</div>
           <div className="mt-1 text-subtle">{project.status}</div>
         </div>
 
-        <div className="col-span-6 sm:col-span-2 flex items-start justify-end pt-2">
+        <div className="col-span-3 sm:col-span-2 flex items-start justify-end pt-2">
           <span className="inline-flex items-center gap-1 font-mono text-xs text-muted group-hover:text-accent transition-colors">
             view
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

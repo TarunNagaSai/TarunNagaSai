@@ -33,14 +33,14 @@ export function FeaturedWriting() {
                 rel="noreferrer"
                 className="group block border-t border-border py-8"
               >
-                <div className="flex items-start justify-between gap-6">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6">
                   <div className="flex-1 max-w-3xl">
                     <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-fg group-hover:text-accent transition-colors">
                       {a.title}
                     </h3>
                     <p className="mt-3 text-subtle leading-relaxed">{a.teaser}</p>
                   </div>
-                  <div className="flex flex-col items-end gap-2 shrink-0 font-mono text-xs">
+                  <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 shrink-0 font-mono text-xs">
                     <span className="text-muted">{a.date}</span>
                     <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
