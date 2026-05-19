@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { Container } from '../layout/Container';
+import { SITE } from '@/lib/site';
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -47,10 +48,10 @@ export function Hero() {
           transition={{ duration: 0.9, ease, delay: 0.3 }}
           className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 font-mono text-xs text-muted"
         >
-          <Stat label="years building" value="4+" />
-          <Stat label="apps on app stores" value="2" />
-          <Stat label="verses translated" value="60K" />
-          <Stat label="error rate" value="0%" />
+          <Stat label="years building" value={SITE.stats.yearsBuilding} />
+          <Stat label="apps on app stores" value={SITE.stats.appsOnAppStores} />
+          <Stat label="websites built" value={SITE.stats.websitesBuilt} />
+          <Stat label="AI project" value={SITE.stats.aiProjects} />
         </motion.div>
       </Container>
     </section>

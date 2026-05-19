@@ -1,11 +1,19 @@
+import Image from 'next/image';
 import { Container } from './Container';
 import { SITE } from '@/lib/site';
+import GithubIcon from '@/assets/Github=White.svg';
+import XIcon from '@/assets/X=White.svg';
+import SubstackIcon from '@/assets/substack.svg';
+import LinkedInIcon from '@/assets/Group.svg';
+import MediumIcon from '@/assets/Dribbble=White.svg';
 
 const SOCIALS = [
-  { label: 'github', href: SITE.social.github },
-  { label: 'linkedin', href: SITE.social.linkedin },
-  { label: 'medium', href: SITE.social.medium },
-];
+  { label: 'GitHub',   href: SITE.social.github,   icon: GithubIcon   },
+  { label: 'LinkedIn', href: SITE.social.linkedin,  icon: LinkedInIcon },
+  { label: 'X',        href: SITE.social.x,         icon: XIcon        },
+  { label: 'Substack', href: SITE.social.substack,  icon: SubstackIcon },
+  { label: 'Medium',   href: SITE.social.medium,    icon: MediumIcon   },
+].filter((s) => s.href);
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -21,9 +29,10 @@ export function Footer() {
                 href={s.href}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-accent transition-colors"
+                className="icon-accent-hover"
+                aria-label={s.label}
               >
-                {s.label}
+                <Image src={s.icon} alt={s.label} width={18} height={18} />
               </a>
             ))}
           </span>

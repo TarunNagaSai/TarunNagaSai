@@ -13,6 +13,7 @@ export const SITE = {
     linkedin: 'https://www.linkedin.com/in/tarun-naga-sai/',
     medium: 'https://medium.com/@tarunnagasai007',
     substack: 'https://substack.com/@tarunnagasai',
+    x: 'https://x.com/TarunNagaSai7',
   },
 
   /** Display strings without protocols — used in contact lists. */
@@ -23,6 +24,14 @@ export const SITE = {
     linkedin: 'linkedin.com/in/tarun-naga-sai',
     medium: 'medium.com/@tarunnagasai007',
     substack: 'substack.com/@tarunnagasai',
+    x: 'x.com/TarunNagaSai7',
+  },
+
+  stats: {
+    yearsBuilding: '4+',
+    appsOnAppStores: '4',
+    websitesBuilt: '2',
+    aiProjects: '1',
   },
 
   /** Specific external URLs referenced from project / article data. */

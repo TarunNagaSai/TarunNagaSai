@@ -31,35 +31,6 @@ export function ContactStrip() {
               <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
-
-          <div className="mt-10 flex items-center gap-6 font-mono text-xs text-muted">
-            <a
-              href={SITE.social.github}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent transition-colors uppercase tracking-wider"
-            >
-              github
-            </a>
-            <span className="hairline w-6" />
-            <a
-              href={SITE.social.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent transition-colors uppercase tracking-wider"
-            >
-              linkedin
-            </a>
-            <span className="hairline w-6" />
-            <a
-              href={SITE.social.medium}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent transition-colors uppercase tracking-wider"
-            >
-              medium
-            </a>
-          </div>
         </Reveal>
       </Container>
     </section>

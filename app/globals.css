@@ -93,4 +93,13 @@
   .hairline {
     @apply h-px bg-border;
   }
+
+  /* Converts a white SVG <img> to the theme accent (#5BA3D0) on hover */
+  .icon-accent-hover {
+    @apply opacity-60 transition-[filter,opacity] duration-200;
+  }
+  .icon-accent-hover:hover {
+    filter: brightness(0) invert(64%) sepia(43%) saturate(500%) hue-rotate(173deg) brightness(96%);
+    opacity: 1;
+  }
 }
