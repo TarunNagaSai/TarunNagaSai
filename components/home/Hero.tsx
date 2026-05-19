@@ -25,11 +25,16 @@ export function Hero() {
           initial={initial}
           animate={animate}
           transition={{ duration: 0.9, ease }}
-          className="text-display font-medium tracking-tight max-w-5xl"
+          className="text-3xl sm:text-5xl md:text-display font-medium tracking-tight leading-[1.1] md:leading-[0.95] max-w-5xl"
         >
-          Agentic AI Engineer<span className="text-muted">,</span>
+          <span className="whitespace-nowrap">
+            Agentic AI <span className="text-accent">Engineer</span>
+            <span className="text-muted">,</span>
+          </span>
           <br />
-          full-stack developer<span className="text-accent">.</span>
+          <span className="whitespace-nowrap">
+            full-stack developer<span className="text-accent">.</span>
+          </span>
         </motion.h1>
 
         <motion.p
