@@ -9,7 +9,7 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'Tarun NagaSai — AI systems engineer & full-stack developer',
+    default: 'Tarun NagaSai — Agentic AI Engineer & full-stack developer',
     template: '%s — Tarun NagaSai',
   },
   description:
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: SITE.url,
-    title: 'Tarun NagaSai — AI systems engineer & full-stack developer',
+    title: 'Tarun NagaSai — Agentic AI Engineer & full-stack developer',
     description:
       'I build LLM inference pipelines and the products people use to talk to them.',
     siteName: 'Tarun NagaSai',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Tarun NagaSai',
     description:
-      'AI systems engineer & full-stack developer. Flutter, vLLM, end-to-end product builds.',
+      'Agentic AI Engineer & full-stack developer. Flutter, vLLM, end-to-end product builds.',
   },
 };
 

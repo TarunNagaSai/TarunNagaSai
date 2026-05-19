@@ -47,9 +47,9 @@
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(60rem 40rem at 15% -10%, rgba(91, 163, 208, 0.09), transparent 60%),
-      radial-gradient(50rem 38rem at 95% 110%, rgba(50, 80, 115, 0.07), transparent 60%),
-      radial-gradient(40rem 30rem at 50% 50%, rgba(91, 163, 208, 0.02), transparent 70%);
+      radial-gradient(60rem 40rem at 15% -10%, rgba(91, 163, 208, 0.20), transparent 60%),
+      radial-gradient(50rem 38rem at 95% 110%, rgba(91, 163, 208, 0.14), transparent 60%),
+      radial-gradient(40rem 30rem at 50% 50%, rgba(91, 163, 208, 0.06), transparent 70%);
   }
 }
 

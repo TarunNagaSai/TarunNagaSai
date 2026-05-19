@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { SITE } from '@/lib/site';
 
-export const alt = 'Tarun NagaSai — AI systems engineer & full-stack developer';
+export const alt = 'Tarun NagaSai — Agentic AI Engineer & full-stack developer';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -48,7 +48,7 @@ export default function OG() {
               flexDirection: 'column',
             }}
           >
-            <span>AI systems engineer<span style={{ color: '#6B6B6B' }}>,</span></span>
+            <span>Agentic AI Engineer<span style={{ color: '#6B6B6B' }}>,</span></span>
             <span>
               full-stack developer<span style={{ color: '#5BA3D0' }}>.</span>
             </span>

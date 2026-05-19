@@ -13,7 +13,7 @@ export function SelectedWork() {
         <div className="flex items-end justify-between mb-12">
           <div>
             <p className="font-mono text-xs text-muted tracking-wider uppercase mb-3">
-              Selected Work
+              Client Work
             </p>
             <h2 className="text-h2 font-medium tracking-tight">
               Things I've shipped<span className="text-accent">.</span>

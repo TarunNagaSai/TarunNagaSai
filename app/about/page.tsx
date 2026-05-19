@@ -6,7 +6,7 @@ import { ArrowLink } from '@/components/ui/ArrowLink';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Tarun NagaSai — AI systems engineer and full-stack developer based in Hyderabad, India.',
+  description: 'Tarun NagaSai — Agentic AI Engineer and full-stack developer based in Hyderabad, India.',
 };
 
 const SKILLS = [
@@ -70,8 +70,7 @@ export default function AboutPage() {
         <Reveal>
           <div className="prose-custom max-w-2xl">
             <p className="text-xl sm:text-2xl text-fg font-medium leading-snug tracking-tight">
-              I'm a full-stack developer turned AI systems engineer, based in
-              Hyderabad, India.
+              I'm an Agentic AI Engineer, based in Hyderabad, India.
             </p>
             <p>
               I spent four years building production mobile apps with Flutter —
@@ -95,9 +94,7 @@ export default function AboutPage() {
               side, because the same brain wrote both.
             </p>
             <p>
-              I write about what I learn — engineering case studies, architecture
-              migrations, and reflections on what it's like to work with AI
-              every day without losing the muscle of thinking for yourself.
+              I learn, apply them to real projects, and share what I learn. I write about then things I figure out along the way — the hard-won lessons from shipping production systems, the weird problems that don't have good docs, and the things that just plain surprised me. If that sounds interesting,
             </p>
           </div>
         </Reveal>
@@ -142,7 +139,7 @@ export default function AboutPage() {
               Get in touch
             </p>
             <h2 className="text-h1 font-medium tracking-tight max-w-3xl">
-              Open to freelance and full-time roles<span className="text-accent">.</span>
+              Open for freelance projects and contracts<span className="text-accent">.</span>
             </h2>
             <div className="mt-10">
               <ArrowLink href="/contact">Contact me</ArrowLink>

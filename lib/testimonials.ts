@@ -14,26 +14,14 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Tarun owned the AI pipeline end-to-end — from GPU orchestration to the admin tools we use to publish translations. The thing just works. We have not had to think about it once since launch.",
+      "Tarun delivered what we needed, He understood out requirements and executed it perfectly. He automated most of our manual processes. Overall it was great working with him.",
     name: 'Yahuah Bible Platform',
-    role: 'Founder · AI Translation Pipeline',
+    role: 'Founder · Yeral Ogando',
   },
   {
     quote:
-      "He rewrote the entire Flutter app while it was live in the store. Memory dropped, screens got snappier, and our crash rate went down — and users never noticed a thing. That is the highest compliment I can give.",
-    name: 'Horeb',
-    role: 'Product Lead · Mobile',
-  },
-  {
-    quote:
-      "Most engineers either build the app or the AI behind it. Tarun does both fluently, on the same project. It saved us a hire and the two halves actually talk to each other.",
-    name: 'Independent Client',
-    role: 'Founder · AI Product',
-  },
-  {
-    quote:
-      "Clean code, clean thinking, and the rare ability to explain why a decision was made — not just what was shipped. The kind of engineer you keep on speed dial.",
-    name: 'Engineering Collaborator',
-    role: 'Senior Engineer · Backend',
+      "Honestly, I'm so happy with how everything turned out. The final product looks amazing, and he actually did more than I even asked for. A huge shoutout for the UI betterments too, really appreciated that extra work done by him. At the end of the day, quality matters, and he nailed it!",
+    name: 'Horeb References Bible App',
+    role: 'Founder· Ajay Kumar Bunga',
   },
 ];
