@@ -23,7 +23,7 @@ export function Header() {
             href="/"
             className="font-mono text-sm tracking-tight text-fg hover:text-accent transition-colors"
           >
-            tarun nagasai
+            Tarun Naga sai
           </Link>
           <ul className="flex items-center gap-7 sm:gap-9 font-mono text-sm">
             {NAV.map((item) => {
