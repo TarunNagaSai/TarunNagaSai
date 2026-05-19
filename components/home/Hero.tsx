@@ -52,7 +52,7 @@ export function Hero() {
           transition={{ duration: 0.9, ease, delay: 0.3 }}
           className="mt-14 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-3 sm:gap-y-4 sm:gap-x-10 font-mono text-xs text-muted"
         >
-          <Stat label="of Engineering Softwares" value={SITE.stats.yearsBuilding} />
+          <Stat label="Years of Engineering" value={SITE.stats.yearsBuilding} />
           <Stat label="apps on app stores" value={SITE.stats.appsOnAppStores} animate startDelay={700} />
           <Stat label="websites built" value={SITE.stats.websitesBuilt} animate startDelay={850} />
           <Stat label="AI project" value={SITE.stats.aiProjects} animate startDelay={1000} />
@@ -130,6 +130,7 @@ function AnimatedNumber({
 
         const rand = Math.floor(Math.random() * Math.pow(10, digits))
           .toString()
+
           .padStart(digits, '0');
         setDisplay(rand + suffix);
 
