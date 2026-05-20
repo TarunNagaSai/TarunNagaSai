@@ -16,3 +16,13 @@
   Deploy — push to GitHub, import to Vercel, zero config. Update metadataBase in app/layout.tsx once you have a real domain.
 
   Have fun with it.
+
+   When you're ready to add the blog feature
+
+  Three steps:
+
+  1. Add an articles: { title, href, date }[] field to ResearchProject in lib/research.ts.
+  2. In app/research/page.tsx, swap the wrapper <div className="group block border-t border-border py-10"> for <Link href={/research/${r.slug}}> — same classes, just routes now.
+  3. Create app/research/[slug]/page.tsx with generateStaticParams() over research[] — render that project's article list (mirror /writing's <ul> again).
+
+  Visuals will stay identical; only the wrapper element and route change.
