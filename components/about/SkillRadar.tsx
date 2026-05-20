@@ -1,7 +1,3 @@
-'use client';
-
-import { motion, useReducedMotion } from 'framer-motion';
-
 type Skill = {
   label: string;
   sub?: string;
@@ -60,8 +56,6 @@ function labelBaseline(angle: number): 'auto' | 'middle' | 'hanging' {
 }
 
 export function SkillRadar() {
-  const reduce = useReducedMotion();
-
   const polygonPoints = SKILLS.map((s, i) => {
     const p = pointFor(i, s.score);
     return `${p.x.toFixed(2)},${p.y.toFixed(2)}`;
@@ -133,23 +127,18 @@ export function SkillRadar() {
           })}
 
           {/* Value polygon */}
-          <motion.polygon
+          <polygon
             points={polygonPoints}
-            className="fill-accent/15 stroke-accent"
+            className="fill-accent/20 stroke-accent"
             strokeWidth="1.75"
             strokeLinejoin="round"
-            initial={reduce ? false : { opacity: 0, scale: 0.92 }}
-            whileInView={reduce ? undefined : { opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transformOrigin: `${CENTER}px ${CENTER}px` }}
           />
 
           {/* Points */}
           {SKILLS.map((s, i) => {
             const p = pointFor(i, s.score);
             return (
-              <motion.circle
+              <circle
                 key={s.label}
                 cx={p.x}
                 cy={p.y}
@@ -157,14 +146,6 @@ export function SkillRadar() {
                 fill={s.color}
                 className="stroke-bg"
                 strokeWidth="2"
-                initial={reduce ? false : { opacity: 0, scale: 0 }}
-                whileInView={reduce ? undefined : { opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: '0px 0px -80px 0px' }}
-                transition={{
-                  duration: 0.4,
-                  delay: 0.5 + i * 0.04,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
               />
             );
           })}
@@ -228,13 +209,6 @@ export function SkillRadar() {
         </ul>
       </div>
 
-      {/* Note */}
-      <div className="mt-6 rounded-lg border border-border bg-bg/30 px-4 py-3.5 text-sm text-subtle leading-relaxed">
-        <strong className="text-fg font-medium">Agentic AI (52)</strong> — ReAct loop
-        built from scratch, no framework. Understands the mechanics: tool dispatch,
-        message history, termination. One project, not yet production. Strong
-        foundation.
-      </div>
     </div>
   );
 }
