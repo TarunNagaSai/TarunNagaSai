@@ -71,20 +71,8 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: 'rust-gc-vm',
-    number: '05',
-    title: 'rust-gc-vm',
-    tagline: 'Studying how language runtimes work.',
-    year: '2025',
-    status: 'Research',
-    blurb:
-      'Writing a garbage collector in Rust, with the goal of integrating it into the Dart VM. A long-running project to understand the runtime that Flutter is built on.',
-    tags: ['Rust', 'FFI', 'GC algorithms', 'Dart VM'],
-    featured: false,
-  },
-  {
     slug: 'pokedex-ai',
-    number: '06',
+    number: '05',
     title: 'PokéDex AI',
     tagline: 'My first LLM project.',
     year: '2024',
@@ -96,7 +84,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'flutter-animations',
-    number: '07',
+    number: '06',
     title: 'Flutter Animations',
     tagline: 'Open-source animation patterns.',
     year: '2023',

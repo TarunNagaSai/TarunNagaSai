@@ -3,6 +3,7 @@ import { Container } from '@/components/layout/Container';
 import { Reveal } from '@/components/ui/Reveal';
 import { Tag } from '@/components/ui/Tag';
 import { ArrowLink } from '@/components/ui/ArrowLink';
+import { SkillRadar } from '@/components/about/SkillRadar';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -100,7 +101,24 @@ export default function AboutPage() {
         </Reveal>
 
         <section className="mt-32 border-t border-border pt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-10 mb-16">
+            <div className="sm:col-span-4 md:col-span-3">
+              <p className="font-mono text-xs text-muted tracking-wider uppercase">
+                Skill radar
+              </p>
+              <p className="mt-3 text-sm text-subtle max-w-xs">
+                A self-assessment across ten career domains, scored 0–100.
+                Honest about where I'm strong and where I'm still climbing.
+              </p>
+            </div>
+            <div className="sm:col-span-8 md:col-span-9">
+              <Reveal>
+                <SkillRadar />
+              </Reveal>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-10 border-t border-border pt-16">
             <div className="sm:col-span-4 md:col-span-3">
               <p className="font-mono text-xs text-muted tracking-wider uppercase">
                 Skills
