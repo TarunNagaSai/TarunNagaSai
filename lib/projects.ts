@@ -27,9 +27,7 @@ export const projects: Project[] = [
       'Built a custom AI pipeline that translates the Bible into European languages without losing the meaning of Hebrew or Greek words. Runs on GPU servers and shipped 60,000+ verses with zero errors.',
     tags: ['vLLM', 'Gemma 4 31B', 'RunPod', 'Python', 'Laravel'],
     featured: true,
-    links: [
-      { label: 'Read on Medium', href: SITE.social.medium },
-    ],
+    links: [],
   },
   {
     slug: 'horeb',
@@ -42,9 +40,7 @@ export const projects: Project[] = [
       'Rebuilt a state-heavy Flutter app to be data-driven and offline-first. Cut memory use by 64% and made the app 3x faster — without changing what users see.',
     tags: ['Flutter', 'ObjectBox', 'Bloc', 'Firebase'],
     featured: true,
-    links: [
-      { label: 'Migration write-up', href: SITE.social.medium },
-    ],
+    links: [],
   },
   {
     slug: 'healthpass',
