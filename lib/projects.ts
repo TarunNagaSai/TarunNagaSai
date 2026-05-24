@@ -21,8 +21,8 @@ export const projects: Project[] = [
     number: '01',
     title: 'Yahuah Bible Platform',
     tagline: 'An AI translation system for sacred text.',
-    year: '2025',
-    status: 'Production',
+    year: '03/2026',
+    status: 'Active',
     blurb:
       'Built a custom AI pipeline that translates the Bible into European languages without losing the meaning of Hebrew or Greek words. Runs on GPU servers and shipped 60,000+ verses with zero errors.',
     tags: ['vLLM', 'Gemma 4 31B', 'RunPod', 'Python', 'Laravel'],
@@ -36,8 +36,8 @@ export const projects: Project[] = [
     number: '02',
     title: 'Horeb',
     tagline: 'Offline-first Bible app for Flutter.',
-    year: '2024',
-    status: 'Active',
+    year: '04/2026',
+    status: 'Production',
     blurb:
       'Rebuilt a state-heavy Flutter app to be data-driven and offline-first. Cut memory use by 64% and made the app 3x faster — without changing what users see.',
     tags: ['Flutter', 'ObjectBox', 'Bloc', 'Firebase'],
@@ -75,8 +75,8 @@ export const projects: Project[] = [
     number: '05',
     title: 'PokéDex AI',
     tagline: 'My first LLM project.',
-    year: '2024',
-    status: 'Archived',
+    year: '06/2025',
+    status: 'OSS',
     blurb:
       'A custom assistant trained on Pokémon data. Built two backends side-by-side — one with LangChain, one with ChromaDB — to learn how retrieval-augmented generation actually works.',
     tags: ['NestJS', 'LangChain', 'ChromaDB', 'Gemini'],
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     number: '06',
     title: 'Flutter Animations',
     tagline: 'Open-source animation patterns.',
-    year: '2023',
+    year: '12/2026',
     status: 'OSS',
     blurb:
       'A public reference repo of advanced Flutter animation patterns — physics scrolling, custom clip paths, gesture-driven cards, shared element transitions.',
