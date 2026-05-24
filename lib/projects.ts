@@ -47,7 +47,7 @@ export const projects: Project[] = [
     number: '03',
     title: 'HealthPass by TruNord',
     tagline: 'Health & fitness app on the App Store.',
-    year: '2023',
+    year: '04/2024',
     status: 'Production',
     blurb:
       'Built the full Flutter app and bridged it to native Android + iOS health SDKs. Tracks steps, sleep, nutrition, and connects users to doctors via video call.',
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     number: '04',
     title: 'BumpedIn',
     tagline: 'Discover people near you.',
-    year: '2023',
+    year: '07/2024',
     status: 'Production',
     blurb:
       'A social app that shows you people in your community within a chosen radius — with real-time chat over sockets and background location tracking.',
