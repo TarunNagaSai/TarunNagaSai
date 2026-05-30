@@ -9,7 +9,7 @@ const SKILLS: Skill[] = [
   { label: 'Mobile', sub: 'Flutter', score: 95, color: '#1D9E75' },
   { label: 'AI / LLM', sub: 'Pipelines', score: 82, color: '#7F77DD' },
   { label: 'Data / ETL', sub: 'Engineering', score: 80, color: '#5DCAA5' },
-  { label: 'Technical', sub: 'Writing', score: 78, color: '#AFA9EC' },
+  { label: 'Automation', sub: 'Engineering', score: 78, color: '#AFA9EC' },
   { label: 'Backend', sub: 'NestJS / Laravel', score: 72, color: '#378ADD' },
   { label: 'Frontend', sub: 'Svelte / React', score: 65, color: '#85B7EB' },
   { label: 'DevOps', sub: 'Deployment', score: 60, color: '#FAC775' },
