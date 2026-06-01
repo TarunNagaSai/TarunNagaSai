@@ -15,7 +15,7 @@ export const articles: Article[] = [
     href: "https://tarunnagasai.substack.com/p/about-meskillmd",
     date: '05/2026',
     teaser:
-      'A skill that know everything about me and grows with me ',
+      'A skill that know everything about me and grows with me',
     tags: ['AI', 'Agent', 'Skill', 'about-me'],
     featured: true,
   },
