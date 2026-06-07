@@ -6,6 +6,7 @@ import XIcon from '@/assets/X=White.svg';
 import SubstackIcon from '@/assets/substack.svg';
 import LinkedInIcon from '@/assets/Group.svg';
 import MediumIcon from '@/assets/Dribbble=White.svg';
+import HuggingFaceIcon from '@/assets/Huggingface.svg';
 
 const SOCIALS = [
   { label: 'GitHub',   href: SITE.social.github,   icon: GithubIcon   },
@@ -13,6 +14,7 @@ const SOCIALS = [
   { label: 'X',        href: SITE.social.x,         icon: XIcon        },
   { label: 'Substack', href: SITE.social.substack,  icon: SubstackIcon },
   { label: 'Medium',   href: SITE.social.medium,    icon: MediumIcon   },
+  { label: 'Hugging Face', href: SITE.social.huggingFace, icon: HuggingFaceIcon },
 ].filter((s) => s.href);
 
 export function Footer() {

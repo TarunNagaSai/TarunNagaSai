@@ -14,6 +14,7 @@ export const SITE = {
     medium: 'https://medium.com/@tarunnagasai007',
     substack: 'https://substack.com/@tarunnagasai',
     x: 'https://x.com/TarunNagaSai7',
+    huggingFace: 'https://huggingface.co/TarunNagaSai007', // No Hugging Face account yet, but leaving this here for when I do
   },
 
   /** Display strings without protocols — used in contact lists. */
@@ -25,6 +26,7 @@ export const SITE = {
     medium: 'medium.com/@tarunnagasai007',
     substack: 'substack.com/@tarunnagasai',
     x: 'x.com/TarunNagaSai7',
+    huggingFace: 'huggingface.co/TarunNagaSai007',
   },
 
   stats: {
