@@ -7,20 +7,20 @@ type Skill = {
 
 const SKILLS: Skill[] = [
   { label: 'Mobile', sub: 'Flutter', score: 95, color: '#1D9E75' },
-  { label: 'AI / LLM', sub: 'Pipelines', score: 82, color: '#7F77DD' },
+  { label: 'AI / LLM', sub: 'Pipelines', score: 85, color: '#7F77DD' },
   { label: 'Data / ETL', sub: 'Engineering', score: 80, color: '#5DCAA5' },
   { label: 'Automation', sub: 'Engineering', score: 78, color: '#AFA9EC' },
   { label: 'Backend', sub: 'NestJS / Laravel', score: 72, color: '#378ADD' },
   { label: 'Frontend', sub: 'Svelte / React', score: 65, color: '#85B7EB' },
   { label: 'DevOps', sub: 'Deployment', score: 60, color: '#FAC775' },
+  { label: 'LLM Fine-tuning', sub: 'LoRA / PEFT', score: 58, color: '#9B59B6' },
   { label: 'Agentic AI', score: 52, color: '#D85A30' },
-  { label: 'AI Voice', sub: 'Audio', score: 45, color: '#EF9F27' },
   { label: 'Systems', sub: 'Rust / low-level', score: 35, color: '#E24B4A' },
 ];
 
 const HIGHLIGHTS = [
   { label: 'Strongest area', value: 'Mobile (Flutter)' },
-  { label: 'Rising fast', value: 'AI / LLM' },
+  { label: 'Rising fast', value: 'LLM Fine-tuning' },
   { label: 'Gap to close', value: 'Systems / Low-level' },
 ];
 
@@ -84,9 +84,9 @@ export function SkillRadar() {
           viewBox={`0 0 ${SIZE} ${SIZE}`}
           className="block w-full h-auto"
           role="img"
-          aria-label="Radar chart of skill strength across 10 domains"
+          aria-label="Radar chart of skill strength across 10 career domains"
         >
-          <title>Skill strength across 10 domains</title>
+          <title>Skill strength across 10 career domains</title>
           <desc>
             {SKILLS.map((s) => `${s.label}: ${s.score}`).join('. ')}
           </desc>

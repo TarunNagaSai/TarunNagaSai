@@ -15,13 +15,24 @@ const SKILLS = [
     group: 'AI / LLM / Inference',
     items: [
       'vLLM (PagedAttention, KV cache)',
-      'Gemma 4 31B',
-      'RunPod (serverless GPU)',
+      'Gemma 4 31B · Gemma 4 E2B',
+      'RunPod · NVIDIA RTX 6000 Blackwell',
       'DAG orchestration',
       'Python pipeline engineering',
       'LangChain · ChromaDB · HuggingFace',
       'Prompt engineering',
       'Ollama · TranslateGemma',
+    ],
+  },
+  {
+    group: 'LLM Fine-tuning',
+    items: [
+      'Unsloth (LoRA · QLoRA)',
+      'PEFT · TRL (SFTTrainer)',
+      'HuggingFace Hub (model hosting)',
+      'bitsandbytes (quantization)',
+      'Custom LLM evals (ROUGE-L · BERTScore · task-specific EM)',
+      'Alpaca / chat-template data prep',
     ],
   },
   {
@@ -51,7 +62,13 @@ const SKILLS = [
   },
   {
     group: 'Currently learning',
-    items: ['ML math (linear algebra, probability)', 'Training models from scratch', 'LLM architecture (attention, tokenization)', 'Agentic systems (memory, planning, evals)'],
+    items: [
+      'ML math (linear algebra, probability)',
+      'Distributed training (FSDP · DeepSpeed)',
+      'LLM architecture (attention, tokenization)',
+      'Agentic systems (memory, planning, evals)',
+      'GGUF / Ollama model deployment',
+    ],
   },
 ];
 
@@ -95,7 +112,14 @@ export default function AboutPage() {
               side, because the same brain wrote both.
             </p>
             <p>
-              I learn, apply them to real projects, and share what I learn. I write about then things I figure out along the way — the hard-won lessons from shipping production systems, the weird problems that don't have good docs, and the things that just plain surprised me. If that sounds interesting,
+              I learn, apply new ideas to real projects, and share what I figure out along the way — the hard-won lessons from shipping production systems, the weird problems that don't have good docs, and the things that just plain surprised me. If that sounds interesting, everything is on my{' '}
+              <a
+                href="/writing"
+                className="text-fg underline decoration-border underline-offset-4 hover:decoration-accent transition-colors"
+              >
+                writing page
+              </a>
+              .
             </p>
           </div>
         </Reveal>
