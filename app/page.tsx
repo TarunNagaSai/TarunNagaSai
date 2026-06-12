@@ -4,14 +4,16 @@ import { SelectedWork } from '@/components/home/SelectedWork';
 import { FeaturedWriting } from '@/components/home/FeaturedWriting';
 import { Testimonials } from '@/components/home/Testimonials';
 import { ContactStrip } from '@/components/home/ContactStrip';
+import { MyServicesSnippet } from '@/components/home/WhatCanIDo';
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <AboutSnippet />
+      <MyServicesSnippet />
       <SelectedWork />
       <FeaturedWriting />
+      <AboutSnippet />
       <Testimonials />
       <ContactStrip />
     </>

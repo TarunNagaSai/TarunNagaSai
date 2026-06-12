@@ -28,12 +28,16 @@ export function Hero() {
           className="text-3xl sm:text-5xl md:text-display font-medium tracking-tight leading-[1.1] md:leading-[0.95] max-w-5xl"
         >
           <span className="whitespace-nowrap">
-            AI <span className="text-accent">Engineer</span>
+            Hello!
+          </span>
+          <br />
+          <span className="whitespace-nowrap">
+            I am <span className="text-accent">Tarun</span>
             <span className="text-muted">,</span>
           </span>
           <br />
           <span className="whitespace-nowrap">
-            Product Architect<span className="text-accent">.</span>
+            AI Product Engineer<span className="text-accent">.</span>
           </span>
         </motion.h1>
 
@@ -130,7 +134,6 @@ function AnimatedNumber({
 
         const rand = Math.floor(Math.random() * Math.pow(10, digits))
           .toString()
-
           .padStart(digits, '0');
         setDisplay(rand + suffix);
 

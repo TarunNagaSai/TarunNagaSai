@@ -39,17 +39,20 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* Ambient gradient orbs — warm + cool, very faint. Match theme accent + slate. */
+  /* Ambient gradient orbs — very faint, accent-tinted. Eased multi-stop
+     falloff + heavy blur to avoid visible banding rings on the dark bg.
+     Oversized inset keeps the blur's soft edge off-screen. */
   body::after {
     content: '';
     position: fixed;
-    inset: 0;
+    inset: -20%;
     pointer-events: none;
     z-index: 0;
+    filter: blur(64px);
     background:
-      radial-gradient(60rem 40rem at 15% -10%, rgba(91, 163, 208, 0.20), transparent 60%),
-      radial-gradient(50rem 38rem at 95% 110%, rgba(91, 163, 208, 0.14), transparent 60%),
-      radial-gradient(40rem 30rem at 50% 50%, rgba(91, 163, 208, 0.06), transparent 70%);
+      radial-gradient(60rem 40rem at 15% -10%, rgba(91, 163, 208, 0.18) 0%, rgba(91, 163, 208, 0.10) 30%, rgba(91, 163, 208, 0.04) 55%, rgba(91, 163, 208, 0.01) 75%, transparent 100%),
+      radial-gradient(50rem 38rem at 95% 110%, rgba(91, 163, 208, 0.13) 0%, rgba(91, 163, 208, 0.07) 30%, rgba(91, 163, 208, 0.03) 55%, rgba(91, 163, 208, 0.01) 75%, transparent 100%),
+      radial-gradient(40rem 30rem at 50% 50%, rgba(91, 163, 208, 0.05) 0%, rgba(91, 163, 208, 0.03) 40%, rgba(91, 163, 208, 0.01) 70%, transparent 100%);
   }
 }
 
