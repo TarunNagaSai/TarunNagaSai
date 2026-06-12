@@ -1,4 +1,6 @@
-import Link from 'next/link';
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import type { Project } from '@/lib/projects';
 import { Container } from '../layout/Container';
@@ -9,16 +11,18 @@ interface CaseStudyHeaderProps {
 }
 
 export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
+  const router = useRouter();
+
   return (
     <header className="pt-16 sm:pt-24 pb-16">
       <Container size="wide">
-        <Link
-          href="/work"
+        <button
+          onClick={() => router.back()}
           className="inline-flex items-center gap-2 font-mono text-xs text-muted hover:text-accent transition-colors mb-12"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
-          all work
-        </Link>
+          Back
+        </button>
 
         <div className="font-mono text-xs text-muted mb-6 flex items-center gap-3">
           <span>{project.number}</span>

@@ -17,7 +17,7 @@ export function Hero() {
         <div className="flex items-center gap-3 mb-10">
           <span className="hairline w-12" />
           <span className="font-mono text-xs text-muted tracking-wider uppercase">
-            Hyderabad, India · Available for work
+            Visakhapatnam, India · Available for work
           </span>
         </div>
 
@@ -28,12 +28,12 @@ export function Hero() {
           className="text-3xl sm:text-5xl md:text-display font-medium tracking-tight leading-[1.1] md:leading-[0.95] max-w-5xl"
         >
           <span className="whitespace-nowrap">
-            Agentic AI <span className="text-accent">Engineer</span>
+            AI <span className="text-accent">Engineer</span>
             <span className="text-muted">,</span>
           </span>
           <br />
           <span className="whitespace-nowrap">
-            full-stack developer<span className="text-accent">.</span>
+            Product Architect<span className="text-accent">.</span>
           </span>
         </motion.h1>
 
@@ -54,8 +54,8 @@ export function Hero() {
         >
           <Stat label="Years of Engineering" value={SITE.stats.yearsBuilding} />
           <Stat label="apps on app stores" value={SITE.stats.appsOnAppStores} animate startDelay={700} />
-          <Stat label="websites built" value={SITE.stats.websitesBuilt} animate startDelay={850} />
-          <Stat label="AI project" value={SITE.stats.aiProjects} animate startDelay={1000} />
+          <Stat label="AI project Build" value={SITE.stats.aiProjects} animate startDelay={1000} />
+          <Stat label="websites live" value={SITE.stats.websitesBuilt} animate startDelay={850} />
         </motion.div>
       </Container>
     </section>

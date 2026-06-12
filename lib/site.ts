@@ -5,7 +5,7 @@
 
 export const SITE = {
   name: 'Tarun NagaSai',
-  url: 'https://tarunnagasai.dev',
+  url: 'https://tarun.avipra.com',
   email: 'tarunnagasai@icloud.com',
 
   social: {
@@ -20,7 +20,7 @@ export const SITE = {
   /** Display strings without protocols — used in contact lists. */
   display: {
     email: 'tarunnagasai@icloud.com',
-    domain: 'tarunnagasai.dev',
+    domain: 'tarun.avipra.com',
     github: 'github.com/TarunNagaSai',
     linkedin: 'linkedin.com/in/tarun-naga-sai',
     medium: 'medium.com/@tarunnagasai007',
@@ -32,8 +32,8 @@ export const SITE = {
   stats: {
     yearsBuilding: '4+',
     appsOnAppStores: '4',
+    aiProjects: '2',
     websitesBuilt: '2',
-    aiProjects: '1',
   },
 
   /** Specific external URLs referenced from project / article data. */

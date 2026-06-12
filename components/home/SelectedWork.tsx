@@ -16,7 +16,7 @@ export function SelectedWork() {
               Client Work
             </p>
             <h2 className="text-h2 font-medium tracking-tight">
-              Things I've shipped<span className="text-accent">.</span>
+              Projects I've shipped<span className="text-accent">.</span>
             </h2>
           </div>
           <div className="hidden sm:block">
