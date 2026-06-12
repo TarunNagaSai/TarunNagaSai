@@ -23,7 +23,7 @@ export default function ServicesPage() {
           <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl">
             I deliver the complete lifecycle. The intelligence, the product
             around it, and the systems underneath in a secured way. So an idea becomes
-            something people actually use.
+            something people admire.
           </p>
         </div>
 
@@ -68,18 +68,18 @@ export default function ServicesPage() {
         <section className="mt-32 border-t border-border pt-16">
           <Reveal>
             <p className="font-mono text-xs text-muted tracking-wider uppercase mb-6">
-              Get in touch
+              Question
             </p>
             <h2 className="text-h1 font-medium tracking-tight max-w-3xl">
-              Have an idea worth building<span className="text-accent">?</span>{' '}
-              <span className="text-subtle">Let&apos;s talk.</span>
+              Have a doubt if I can build this<span className="text-accent">?</span>{' '}
+              <br/>
+              <span className="text-subtle">Checkout my work</span>
             </h2>
             <p className="mt-8 text-lg text-subtle max-w-2xl leading-relaxed">
-              Tell me what you&apos;re trying to build and where it stands — I
-              reply within 24 hours.
+              Each project showcases different use cases that gave me experience in different domains 
             </p>
             <div className="mt-12">
-              <ArrowLink href="/contact">Contact me</ArrowLink>
+              <ArrowLink href="/work">My work</ArrowLink>
             </div>
           </Reveal>
         </section>
