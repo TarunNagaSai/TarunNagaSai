@@ -43,7 +43,7 @@ export function Hero() {
           transition={{ duration: 0.9, ease, delay: 0.15 }}
           className="mt-10 max-w-2xl text-lg sm:text-xl text-subtle leading-relaxed"
         >
-          I Help Companies to build Agentic AI, Generative AI solutions and Mobile apps to solve real-world problems and boost their productivity.
+          I help people build AI systems that hold up in the real world, with guardrails clients can trust.
         </motion.p>
 
         <motion.div
