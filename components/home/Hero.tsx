@@ -17,7 +17,7 @@ export function Hero() {
         <div className="flex items-center gap-3 mb-10">
           <span className="hairline w-12" />
           <span className="font-mono text-xs text-muted tracking-wider uppercase">
-            Visakhapatnam, India · Available for work
+            Vishakhapatnam, India · Available for work
           </span>
         </div>
 

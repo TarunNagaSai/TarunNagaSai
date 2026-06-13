@@ -22,7 +22,7 @@ I architect and ship **LLM inference pipelines** (vLLM, DAG orchestration, GPU i
 - 2 years backend (NestJS, Laravel, Prisma)
 - 1+ year LLM/AI pipeline engineering on GPU infrastructure
 - Currently exploring Rust, VM internals, and GC algorithms via [rust-gc-vm](https://github.com/TarunNagaSai)
-- Based in Hyderabad, India — open to freelance & AI systems engagements
+- Based in Vishakhapatnam, India — open to freelance & AI systems engagements
 
 ---
 

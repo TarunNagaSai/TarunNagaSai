@@ -8,7 +8,7 @@ import { MobileHero } from '@/components/about/MobileHero';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Tarun NagaSai — Agentic AI Engineer and full-stack developer based in Hyderabad, India.',
+  description: 'Tarun NagaSai — Agentic AI Engineer and full-stack developer based in Vishakhapatnam, India.',
 };
 
 const SKILLS = [
@@ -97,31 +97,25 @@ export default function AboutPage() {
             <Reveal>
               <div className="prose-custom max-w-2xl">
                 <p className="text-xl sm:text-2xl text-fg font-medium leading-snug tracking-tight">
-                  I'm an AI Product Engineer, based in Vishakhapatnam, India.
+                  I believe software can reach into any domain in the world, whether it's manufacturing, medicine, the oceans, or even space.
                 </p>
                 <p>
-                  I spent four years building production mobile apps with Flutter —
-                  the kind that sit on real users' phones and have to work even when
-                  the network doesn't. Apps on the App Store. Apps with native bridges
-                  into HealthKit and Google Fit. Apps with real-time chat and
-                  background location.
+                  That belief is the reason I became a software engineer. It's the one field where I can work on almost anything. My fascination with gadgets is what set things in motion, and in 2021 I started out as a Flutter mobile app developer. I've been learning ever since.
                 </p>
                 <p>
-                  Then I went deeper. I started building the AI side of products
-                  instead of just calling AI APIs. I shipped a production translation
-                  pipeline running Gemma 4 31B on a GPU server — 60,000 verses of the
-                  Bible translated with zero errors, using a custom DAG, GPU mutex
-                  gating, and a guardrail I had to invent for the problem.
+                  The more I built, the more I understood that writing code is only one part of the whole system. Real products need strong architecture, and good architecture isn't about building things that never break. A perfect product isn't one that's free of errors. It's one that handles them without falling apart.
                 </p>
                 <p>
-                  These days I sit at a rare crossroads. Most engineers can build the
-                  app, or the AI behind it. I do both, on the same project, by
-                  myself. It means a startup or a client can hire one person instead
-                  of two — and the AI side actually talks fluently to the product
-                  side, because the same brain wrote both.
+                  While working on the backends and deployments for my own apps, I discovered the beauty of the backend. It felt like an entirely new world, full of its own tools and software, and I dove into NestJS to explore it.
                 </p>
                 <p>
-                  I learn, apply new ideas to real projects, and share what I figure out along the way — the hard-won lessons from shipping production systems, the weird problems that don't have good docs, and the things that just plain surprised me. If that sounds interesting, everything is on my{' '}
+                  Then the AI era arrived, where almost anything feels possible. For someone who loves moving across domains, this was exactly where I wanted to be. I started my AI journey in 2025 with my first project, a Pokémon RAG pipeline, and I haven't stopped since. I've kept learning, exploring, and building with it every day.
+                </p>
+                <p>
+                  My goal is simple: use software as a tool to do the most good I can for the world. I'll keep exploring and working on anything I can learn and grow from.
+                </p>
+                <p>
+                  I also share what I figure out along the way, the hard-won lessons from shipping production systems and the problems that don't have good docs. If that sounds interesting, everything is on my{' '}
                   <a
                     href="/writing"
                     className="text-fg underline decoration-border underline-offset-4 hover:decoration-accent transition-colors"

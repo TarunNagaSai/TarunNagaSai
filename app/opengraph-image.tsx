@@ -76,7 +76,7 @@ export default function OG() {
             letterSpacing: '0.08em',
           }}
         >
-          <span>Hyderabad, India</span>
+          <span>Vishakhapatnam, India</span>
           <span>{SITE.display.domain}</span>
         </div>
       </div>

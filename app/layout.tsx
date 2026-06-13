@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s — Tarun NagaSai',
   },
   description:
-    'I build LLM inference pipelines and the products people use to talk to them. Flutter, vLLM, NestJS, Laravel. Based in Hyderabad, India.',
+    'I build LLM inference pipelines and the products people use to talk to them. Flutter, vLLM, NestJS, Laravel. Based in Vishakhapatnam, India.',
   keywords: [
     'Tarun NagaSai',
     'AI engineer',

@@ -112,7 +112,7 @@ export function ProfileCard() {
           <p className="mt-1.5 text-[15px] font-medium text-accent">
             AI / LLM Systems Engineer &amp; Full-Stack Developer
           </p>
-          <p className="mt-2 text-[13px] text-muted">Hyderabad, India</p>
+          <p className="mt-2 text-[13px] text-muted">Vishakhapatnam, India</p>
         </div>
 
         <div className="mx-10 mt-7 hairline" />

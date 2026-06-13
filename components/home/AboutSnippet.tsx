@@ -14,13 +14,13 @@ export function AboutSnippet() {
           </Reveal>
           <Reveal className="md:col-span-9 max-w-2xl" delay={0.05}>
             <p className="text-2xl sm:text-3xl font-medium leading-snug tracking-tight text-fg">
-              I bridge the gap between AI and Frontend by managing complete product lifecycle end-to-end.
+              I believe software can reach into almost any domain, and I want to use it to build things that matter.
             </p>
             <p className="mt-8 text-base sm:text-lg text-subtle leading-relaxed text-justify">
-              Four years of Flutter taught me how to ship apps that millions of
-              people can rely on. A year of LLM pipeline work taught me how to make
-              GPUs translate sacred text without ever distorting a single word. I
-              like problems where both halves matter.
+              What started with gadgets and Flutter in 2021 grew into backend
+              systems, and more recently into AI. Along the way I learned that a
+              perfect product isn't one that's free of errors. It's one that handles
+              them without falling apart. I'm here to keep exploring and building.
             </p>
             <div className="mt-10">
               <ArrowLink href="/about">More about me</ArrowLink>
