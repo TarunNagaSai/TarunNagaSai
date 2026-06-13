@@ -9,6 +9,7 @@ export interface Service {
   tagline: string;
   description: string;
   outcomes: string[];
+  skillAnchor: string;
 }
 
 export const services: Service[] = [
@@ -23,6 +24,7 @@ export const services: Service[] = [
       'Models tuned to your domain',
       'Traffic based resource usage',
     ],
+    skillAnchor: 'ai-llm',
   },
   {
     title: 'Mobile App Development',
@@ -35,6 +37,7 @@ export const services: Service[] = [
       'UI with smooth animations',
       'iOS and Android app deployments',
     ],
+    skillAnchor: 'mobile',
   },
   {
     title: 'Full-Stack Web Development',
@@ -47,6 +50,7 @@ export const services: Service[] = [
       'Responsive UI Design-system',
       'Installable, offline-capable PWAs',
     ],
+    skillAnchor: 'frontend',
   },
   {
     title: 'Backend & Data Engineering',
@@ -58,8 +62,8 @@ export const services: Service[] = [
       'Multi database support',
       'Serverless for best use cases',
       'MCP servers for AI to communicate',
-     
     ],
+    skillAnchor: 'backend',
   },
   {
     title: 'Deployments',
@@ -72,5 +76,6 @@ export const services: Service[] = [
       'Servers that can roll back anytime',
       'Multi staged (dev, test, production) deployments',
     ],
+    skillAnchor: 'deployments',
   },
 ];

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Container } from '@/components/layout/Container';
 import { Reveal } from '@/components/ui/Reveal';
 import { ArrowLink } from '@/components/ui/ArrowLink';
@@ -59,6 +60,13 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    href={`/about#${service.skillAnchor}`}
+                    className="inline-flex items-center gap-1.5 mt-6 font-mono text-xs uppercase tracking-wider text-muted border border-border px-3 py-1.5 hover:text-fg hover:border-fg transition-colors"
+                  >
+                    Skills
+                    <span aria-hidden="true">↗</span>
+                  </Link>
                 </div>
               </div>
             </Reveal>
