@@ -1,52 +1,66 @@
 ## The story
 
-HealthPass by TruNord is a health and fitness app on the App Store. It
-tracks your activity, your nutrition, your mental state, and connects you
-with a doctor when you need one.
+HealthPass by TruNord is a health and wellness app on the App Store. It
+tracks your daily activity, what you eat, how your mind is doing, and
+puts a doctor one tap away when you need one.
 
-The hard part: a phone has its own way of measuring health (Apple Health
-on iOS, Google Fit on Android), and the partner platform (Aktivo) has a
-completely different SDK. The app needs to talk to all three, fluently.
+The problem I walked into: a phone already knows a lot about your health,
+but it stores that data in its own way. Apple Health on iOS, Google Fit on
+Android. And the partner platform the client used — Aktivo — had its own
+SDK on top of that. Three separate systems that all needed to work as one.
+
+I built the entire Flutter app from the ground up and figured out how to
+make all three talk to each other without the user ever knowing the
+complexity underneath.
 
 ## What I built
 
-- The **complete Flutter app** from scratch — onboarding, dashboards,
-  charts, video calling, settings, payments.
-- A **native bridge layer** that lets Flutter talk to platform-specific
-  health SDKs using Method Channels.
-- The **data pipeline** that pulls steps, sleep, and heart rate from the
-  phone and pushes them to Aktivo for scoring.
-- **Doctor-on-Call** — an in-app video calling feature for patients to
-  reach physicians directly.
+The full app — onboarding, home dashboards, activity tracking, nutrition
+logging, mind score monitoring, and a diet plan section. Everything a user
+needs to get a complete picture of their health in one place.
+
+A **Doctor on Call** feature that lets patients connect with a physician
+directly inside the app over live video, without leaving or switching to
+another tool.
+
+In-app subscriptions so users can unlock premium features, tied into the
+platform's payment flow with proper receipt handling.
+
+The complete onboarding experience — account setup, health permissions,
+and connecting to the user's existing health data — designed to get new
+users to their first meaningful insight as fast as possible.
 
 ## How it works
 
-Flutter doesn't natively talk to HealthKit or Google Fit. So the app uses
-**Method Channels** — a thin layer where Dart sends a message to native
-Kotlin (Android) or Swift (iOS), which calls the platform's health SDK,
-and returns the data back to Dart.
+Flutter doesn't natively read from HealthKit or Google Fit. The bridge is
+**Method Channels** — Dart sends a message across to native Swift on iOS
+or native Kotlin on Android, which calls the platform's health SDK
+directly, then hands the data back to Flutter. It's a thin layer but it's
+the only way to get accurate, real-time health data out of the OS.
 
-On top of that, the **Aktivo SDK** runs as a separate native dependency.
-I wired it up so the same activity data feeds into Aktivo's scoring
-engine, which computes Mind Score and Nutrition Score on its own.
+The **Aktivo SDK** runs as a separate native dependency on both platforms.
+I wired the same activity data — steps, sleep, heart rate — into Aktivo's
+scoring engine so it could compute Mind Score and Nutrition Score without
+any extra work from the user. One data collection pass, two outputs.
 
-The result: one Flutter codebase, three native integrations, one
-consistent UI.
+State is managed with **GetX** and navigation with **go_router**. The app
+targets iOS 12 and up, which meant supporting older devices while keeping
+the experience consistent with what newer ones expect.
+
+The result is one Flutter codebase handling three native integrations with
+a single consistent UI across both platforms.
 
 ## Stack
 
-**Mobile** — Flutter, Dart, GetX (state), go_router (navigation), Method
-Channels.
+**Mobile** — Flutter, Dart, GetX, go_router, Method Channels.
 
-**Native** — Apple HealthKit (iOS 12+), Google Fit SDK (Android), Aktivo
-SDK (both platforms).
+**Native** — Apple HealthKit (iOS 12+), Google Fit SDK (Android), Aktivo SDK (both platforms).
 
-**Features** — Activity tracking, Mind Score, Nutrition Score, Diet Plan,
-Doctor on Call (video), in-app subscriptions.
+**Features** — In-app subscriptions, video calling, activity tracking, nutrition scoring, mind score, diet plans.
 
 ## Outcomes
 
-- **Live on the App Store** for iOS 12+.
-- Hundreds of users tracking daily activity.
-- Cross-platform consistency on a feature surface that usually requires
-  separate native teams.
+HealthPass is live on the App Store, available to iOS users from iOS 12
+onwards. Users track their daily activity, nutrition, and mental wellness
+in a single app that feels native on every device — without ever knowing
+there are three different health platforms running underneath it.

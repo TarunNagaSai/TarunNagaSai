@@ -1,52 +1,66 @@
 ## The story
 
-This was my first real LLM project. I wanted to understand
-retrieval-augmented generation — RAG — by building it instead of reading
-about it.
+I wanted to understand retrieval-augmented generation properly — not from
+a tutorial, but from building it myself. The only way to know if you
+actually understand something is to build it twice and compare what you
+learned.
 
-So I picked a fun domain (Pokémon), built two versions of the same
-backend, and compared them.
+So I picked a fun domain, Pokémon, built two completely different backends
+that do the same thing, and ran them side by side to see where the
+differences actually mattered.
 
 ## What I built
 
-- **A LangChain RAG backend** — NestJS, HuggingFace embeddings, an
-  in-memory vector store. The "framework" approach.
-- **A ChromaDB backend** — NestJS again, but with a persistent vector
-  database. The "do it from scratch" approach.
-- **Three frontend experiments** to learn cross-platform desktop apps:
-  React + Tauri, Svelte + Tauri, and Svelte + Electron.
-- **Google Gemini 2.0 Flash** as the LLM behind both backends.
+A conversational AI assistant that answers natural language questions
+about Pokémon. Ask it who has higher Sp. Attack between two Pokémon, what
+types a specific one is weak to, or which evolution line has the best base
+stats — and it answers correctly, pulling from real data rather than
+guessing.
+
+Two separate backends built to do the same thing using different
+approaches, so the tradeoffs between framework-level RAG and a hand-built
+pipeline became visible.
+
+Three desktop frontends built as experiments to understand how different
+tools handle cross-platform desktop apps.
 
 ## How it works
 
-The PokéDex assistant answers natural-language questions about Pokémon.
-"Who has higher Sp. Attack — Mewtwo or Mew?" "What types is Charizard
-weak to?"
+Both backends follow the same RAG flow: a user question gets embedded into
+a vector, the vector database finds the most semantically similar Pokémon
+data chunks, those chunks get injected into the prompt as context, and
+**Google Gemini 2.0 Flash** generates the answer. The user gets a
+response grounded in actual data, not hallucination.
 
-The flow is the same in both backends:
+The first backend uses **LangChain** inside NestJS with HuggingFace
+embeddings and an in-memory vector store. It's fast to build because
+LangChain handles chunking, retrieval, and prompt construction for you.
+The tradeoff is that a lot of what's happening is invisible.
 
-1. User question → embed into a vector.
-2. Search the vector DB for the most relevant Pokémon data chunks.
-3. Stuff those chunks into the prompt as context.
-4. Send to Gemini, return the answer.
+The second backend uses **ChromaDB** as a persistent vector database, also
+in NestJS, but with every step written explicitly. Chunking strategy,
+embedding model choice (`all-MiniLM-L6-v2` from HuggingFace), retrieval
+ranking, and prompt assembly are all in the code and visible. This version
+took longer but produced a much deeper understanding of what RAG actually
+does.
 
-What I learned by building both: **LangChain is great for getting started
-fast, but it hides a lot.** Building the ChromaDB version forced me to
-understand chunking, retrieval ranking, and embedding choice properly.
-
-The frontend experiments taught me the difference between Tauri (lighter,
-native) and Electron (heavier, more familiar). I prefer Tauri now.
+The three frontends — React with Tauri, Svelte with Tauri, and Svelte
+with Electron — were experiments in cross-platform desktop app tooling.
+Tauri produces a significantly smaller binary than Electron and feels
+closer to native. That preference has stuck.
 
 ## Stack
 
-**Backend** — NestJS, LangChain, ChromaDB, HuggingFace embeddings
-(`all-MiniLM-L6-v2`), Google Gemini 2.0 Flash.
+**Backend** — NestJS, LangChain, ChromaDB, HuggingFace embeddings (all-MiniLM-L6-v2), Google Gemini 2.0 Flash.
 
 **Frontend** — React, Svelte, Tauri, Electron, Tailwind, Vite.
 
-## Why it matters
+## Outcomes
 
-This is where the LLM trajectory started. RAG fundamentals here → vLLM
-pipelines on RunPod for the Yahuah project. The path from "I built a
-chatbot" to "I built a production GPU pipeline" was a year of intentional
-depth.
+This was the project where the LLM fundamentals clicked. Building both
+backends back to back made the difference between "using a framework" and
+"understanding the underlying mechanics" concrete rather than theoretical.
+
+That foundation is what made the Yahuah Bible translation pipeline
+possible — moving from a local RAG prototype to a production GPU pipeline
+running on RunPod was a direct continuation of what started here.

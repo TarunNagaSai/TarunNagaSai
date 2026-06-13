@@ -81,6 +81,12 @@
   .prose-custom strong {
     @apply text-fg font-medium;
   }
+  .prose-custom pre {
+    @apply font-mono text-sm bg-border/40 rounded-lg p-4 my-6 overflow-x-auto whitespace-pre-wrap break-words;
+  }
+  .prose-custom pre code {
+    @apply bg-transparent p-0 text-fg/90;
+  }
   .prose-custom code {
     @apply font-mono text-[0.875em] text-accent bg-border/40 px-1.5 py-0.5 rounded;
   }

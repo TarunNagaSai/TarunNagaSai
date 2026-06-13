@@ -1,47 +1,80 @@
 ## The story
 
-BumpedIn is a social proximity app. You open it, and you see people in
-your community — within a radius you choose — who you can connect with.
-Tap one, start a conversation, in real time.
+BumpedIn is a social proximity app. You open it, and you see real people
+nearby — within a radius you set — who you can connect with and talk to,
+right now.
 
-The challenge: doing all of that without draining the user's battery, and
-keeping the chat snappy even on a weak network.
+The idea sounds simple until you try to build it. Real-time chat, live
+location, push notifications, profile discovery, and authentication all
+have to work together seamlessly. And none of it can drain the battery,
+because users will uninstall in a day if it does.
+
+I worked across the entire product — the mobile app, the backend API,
+real-time infrastructure, and cloud services. Every layer.
 
 ## What I built
 
-- The **full Flutter app** for iOS and Android.
-- **Background location tracking** that respects battery — not constantly
-  polling, but smart enough to pick up movement.
-- **Real-time chat** over Socket.IO with a Firebase fallback.
-- **Radius-based discovery** with adjustable 5–10km filtering.
-- **Push notifications** for new connections and messages.
+- **Profile discovery** with swipe-based interactions — swipe right to
+  connect, left to pass — with tender-style animated profile cards.
+- **Radius-based filtering** so you only see people within the distance
+  you choose, updated as you and they move.
+- **Real-time chat** that feels instant, with messages that persist and
+  sync the moment someone comes back online.
+- **Background location** that picks up movement without punishing the
+  battery.
+- **Push notifications** for new matches, incoming messages, and
+  connection requests.
+- **Full authentication flow** — sign up, log in, session management —
+  working consistently across mobile and backend.
 
 ## How it works
 
-Location is the hardest piece. iOS and Android both penalize apps that
-poll GPS aggressively, and users notice the battery drain immediately. I
-built a tiered system: significant location changes trigger updates, and
-the app uses Geofencing where possible so the OS does the work instead of
-the app.
+**Backend** — Built the entire API in NestJS, structured around modules
+with auth guards, interceptors, and middleware handling cross-cutting
+concerns like request validation and token verification. MongoDB stores
+user profiles, connections, and message history. Every protected route
+sits behind an auth gate — no request touches business logic without a
+valid session.
 
-For chat, **Socket.IO** handles the live messaging when both users are
-online, and **Firebase Realtime DB** persists messages so they sync the
-moment a user reconnects. Firebase Functions handle the server-side
-event work (like notifying recipients).
+**Real-time chat** — Socket.IO runs the live messaging layer. When both
+users are online, messages are delivered in real time over the socket
+connection. The backend syncs everything to MongoDB so nothing is lost
+when a user disconnects and comes back.
+
+**Authentication** — Firebase Authentication handles identity on the
+mobile side. The backend verifies Firebase ID tokens on every request
+using the Firebase Admin SDK with a dedicated service account, so the
+Flutter app and the NestJS API share the same auth trust model without
+duplicating logic.
+
+**Location** — Background geolocation is the hardest problem in any
+proximity app. iOS and Android both penalize aggressive GPS polling.
+I built a tiered approach: the OS handles significant-location-change
+events and geofencing triggers, and the app only wakes up and reports
+when there's actual movement worth acting on. That's how battery stays
+reasonable.
+
+**Push notifications** — FCM delivers notifications for matches and
+messages. The backend triggers FCM via the Firebase Admin SDK using
+service account credentials, so notifications fire server-side with
+full control over payload and delivery priority.
 
 ## Stack
 
-**Mobile** — Flutter, Dart, Bloc (state).
+**Mobile** — Flutter, Dart, Bloc.
 
-**Realtime** — Socket.IO, Firebase Realtime DB, Firebase Functions, FCM
-(push).
+**Backend** — NestJS, MongoDB, Socket.IO.
 
-**Location** — Background geolocation, Geofencing, custom radius
-filtering.
+**Auth & Cloud** — Firebase Authentication, Firebase Admin SDK, FCM, service accounts.
+
+**Location** — Background Geolocation, Geofencing, OS-native location APIs.
 
 ## Outcomes
 
-- **Shipped to both App Stores.**
-- Real-time chat working reliably across iOS and Android.
-- Battery-friendly background location — a feature that's notoriously
-  hard to get right.
+- **Shipped to both the App Store and Google Play.**
+- Thousands of users connecting and chatting every day through real-time
+  conversations that wouldn't have happened otherwise.
+- Background location running reliably on both platforms — one of the
+  hardest things to get right on mobile, and it just works.
+- Zero auth gaps between the mobile app and the backend — every user,
+  every session, verified end-to-end.

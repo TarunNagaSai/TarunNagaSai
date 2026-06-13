@@ -1,73 +1,90 @@
 ## The story
 
-Horeb is an offline-first Bible app for Flutter — built to be reliable on a
-phone that may never have a stable internet connection.
+Horeb is a multi-regional digital Bible app for Android and iOS. It
+supports six regional languages, works fully offline, and layers in AI
+features and subscription-based content on top of a foundation that had
+to be rock solid before any of that could matter.
 
-When I joined, the app worked, but it was slow. The reason: Bloc (the state
-manager) was being used like a giant in-memory database. Every screen
-eagerly loaded everything it might need. Memory ballooned. Frames dropped.
-The UI was tightly coupled to the data, so even small changes risked
-breaking unrelated screens.
-
-I rewrote the foundation.
+The core challenge wasn't features — it was data integrity. A Bible app
+where a verse loads incorrectly, or a language pack is half-downloaded,
+or the app freezes while parsing scripture is not an app people trust.
+Every architectural decision I made was in service of getting that right.
 
 ## What I built
 
-- A **strictly layered architecture** where UI never touches the database
-  directly. The path is: Bloc → Service Layer → Repository → ObjectBox.
-- A **MetaData Module** that downloads, validates, and swaps Bible
-  language packs at runtime — no app update needed to add a new language.
-- A **lazy-loading data system** where ObjectBox is the single source of
-  truth, and Bloc only holds what the current screen needs.
-- A **Firebase Remote Config integration** so the team can ship a new Bible
-  translation just by updating a config — no code, no release.
+The complete mobile app across Android and iOS — reading experience,
+search, cross references, a topical Bible with unlimited recursive depth,
+a built-in dictionary, daily verse, and an AI chat feature for scripture
+questions.
+
+A **self-healing data system** that automatically detects when local
+content is stale or corrupted and repairs it without the user knowing
+anything went wrong.
+
+**Offline-first reading** so the app is fully usable without a connection,
+with real-time sync that runs quietly in the background when network is
+available.
+
+**Authentication** with subscription-based access to premium features,
+with proper entitlement management so users only see what they've unlocked.
+
+**In-app updates** so users always have the latest content and fixes
+without needing to visit the store.
+
+A **crash monitoring** layer that captures device-specific failures in
+production so issues get diagnosed and fixed before they affect more users.
 
 ## How it works
 
-The metadata flow looks like this:
+The architecture is strictly layered — UI talks to Bloc, Bloc talks to
+services, services talk to the repository, and the repository talks to
+**ObjectBox**. Nothing bypasses this chain. That discipline is what keeps
+the codebase maintainable as features pile up.
 
-1. **Firebase Remote Config** tells the app what languages are available.
-2. **ValidatorService** checks the local files against the remote
-   definition.
-3. **FileUpgradeService** decides what needs updating.
-4. **FallbackPolicyService** handles failure paths — what to do if a
-   download fails midway.
-5. **FileDownloadService** fetches the new pack.
-6. **Isolate conversion** (Dart's `compute()`) parses the heavy JSON off
-   the main thread — the UI never freezes.
-7. **SetLocalDataService** writes to ObjectBox.
-8. **MetaDataBloc** notifies the UI.
+I evaluated three local databases before choosing ObjectBox. Hive was
+outdated, Isar had been abandoned, and Drift was overkill for a workload
+that is essentially key-value with relationships. ObjectBox gave the
+right performance profile for Bible-scale data without unnecessary overhead.
 
-I kept the concurrency control in **exactly one place** — there's a single
-pool with a max of three downloads, no double-pooling, no race conditions.
+The data healing pipeline runs in a specific sequence. **Firebase Remote
+Config** tells the app which language packs are available and what version
+each should be. A **ValidatorService** compares that against what's
+actually on the device. A **FileUpgradeService** decides what needs to be
+fetched. A **FallbackPolicyService** handles failed or partial downloads —
+if something goes wrong mid-fetch, the app falls back cleanly rather than
+leaving the user with broken data. The **FileDownloadService** pulls the
+pack, and Dart's `compute()` function runs the JSON parsing in a separate
+isolate so the main thread and the UI stay completely unblocked.
 
-The big architectural decision: **don't pick the trendy database, pick the
-one that solves the actual problem.** I evaluated Hive (outdated), Isar
-(outdated), and Drift (overkill for a key-value-ish workload), and chose
-ObjectBox.
+Concurrency is controlled in exactly one place — a single download pool
+capped at three concurrent fetches. No double-pooling, no race conditions,
+no edge cases where two services argue over the same file.
+
+**Fuzzy search** with a JSON fallback handles scripture search across all
+supported languages. **RevenueCat** manages subscriptions and entitlements.
+**Fastlane** handles automated deployment to both stores. End-to-end tests
+are written with Patrol.
 
 ## Stack
 
 **Mobile** — Flutter, Dart, ObjectBox, Bloc/Cubit, AutoRoute, Dio, RxDart.
 
-**Firebase** — Auth, FCM, Crashlytics, Analytics, Performance, Remote
-Config, Realtime DB, Firebase AI.
+**Firebase** — Auth, FCM, Crashlytics, Analytics, Performance, Remote Config, Realtime DB, Vertex AI, App Check.
 
-**Tooling** — Patrol (E2E tests), Fastlane, build_runner, flutter_gen,
-derry.
+**Monetization** — RevenueCat (subscriptions + entitlements).
 
-**Modules** — Reading, Search (fuzzy + JSON fallback), Cross References,
-Topical Bible (recursive, unlimited depth), Dictionary, AI Chat, Daily
-Verse, Subscriptions (RevenueCat), Notifications.
+**Tooling** — Fastlane (deployment), Patrol (E2E tests), build_runner, flutter_gen, derry.
 
 ## Outcomes
 
-- **64% reduction** in Dart heap memory.
-- **3x faster** data rendering.
-- Noticeably smoother UI — fewer jank frames during scroll and search.
-- A modular architecture that the team can extend without breaking
-  unrelated areas.
+Horeb serves over **10,000 users** reading scripture daily across six
+regional languages, on devices and network conditions that range from fast
+to unreliable.
+
+Data loads **3x faster** than the previous architecture — not from
+optimization tricks, but from getting the structure right in the first
+place.
 
 The lesson I took from it: *if you do something architecturally right,
 performance pays you back for free.* I wrote about the full migration on
-[Medium](https://medium.com/@tarunnagasai).
+[Medium](https://medium.com/@tarunnagasai007/the-flutter-architecture-mistake-that-worked-in-production-until-it-didnt-c8a7c9577078?sk=cdba48348384dba6945b28011cf520d1).

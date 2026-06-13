@@ -25,10 +25,27 @@ export const projects: Project[] = [
     year: '03/2026',
     status: 'Active',
     blurb:
-      'Built a custom AI pipeline that translates the Bible into European languages without losing the meaning of Hebrew or Greek words. Runs on GPU servers and shipped 60,000+ verses with zero errors.',
-    tags: ['Bible Studies', 'Multi-Legalistic', 'AI', 'Mobile', 'Website'],
+      'Built a complete eco-system for the existing proprietary bible website. Boosted the platform with automated tools and finally built custom AI pipeline that translates the Bible into European languages without losing the meaning of Hebrew or Greek words.',
+    tags: ['Bible Studies', 'Multi-Legalistic', 'AI'],
     featured: true,
-    links: [],
+    links: [
+      {
+        "label": "website",
+        "href":"https://yahuahbible.com"
+      },
+      {
+        "label":"Android",
+        "href":"https://play.google.com/store/apps/details?id=com.yahuha.app"
+      },
+      {
+        "label":"iOS/Mac",
+        "href":"https://apps.apple.com/us/app/yahuah-bible/id6759186130"
+      },
+      {
+        "label":"Windows",
+        "href":"https://apps.microsoft.com/detail/9n8p3vx2xs5j?hl=en-gb&gl=IN"
+      }
+    ],
   },
   {
     slug: 'horeb',
@@ -38,30 +55,18 @@ export const projects: Project[] = [
     year: '04/2026',
     status: 'Production',
     blurb:
-      'Rebuilt a state-heavy Flutter app to be data-driven and offline-first. Cut memory use by 64% and made the app 3x faster — without changing what users see.',
-    tags: ['Bible Studies', 'Multi-Legalistic', 'AI', 'Mobile',],
+      'Built a enterprise bible app that been used by more than 10k+ users. This is a offline 1st application that even runs smoothly on low end device and implemented with accessability tools to enhance the reading experience to the user',
+    tags: ['Bible Studies', 'Multi-Legalistic', 'AI'],
     featured: true,
     links: [{
-      "label": "Play Store",
+      "label": "Android",
       "href":"https://play.google.com/store/apps/details?id=bible.telugu.horeb"
     },
     {
-      "label": "App Store",
+      "label": "iOS",
       "href":"https://apps.apple.com/in/app/horeb-reference-bible/id6761109821"
     }
   ],
-  },
-  {
-    slug: 'bumpedin',
-    number: '04',
-    title: 'BumpedIn',
-    tagline: 'Discover people near you.',
-    year: '07/2024',
-    status: 'Production',
-    blurb:
-      'A social app that shows you people in your community within a chosen radius — with real-time chat over sockets and background location tracking.',
-    tags: ['Social Media', 'Communication', 'Geolocation','Mobile'],
-    featured: true,
   },
   {
     slug: 'healthpass',
@@ -74,6 +79,26 @@ export const projects: Project[] = [
       'Built the full Flutter app and bridged it to native Android + iOS health SDKs. Tracks steps, sleep, nutrition, and connects users to doctors via video call.',
     tags: ['Medical', 'Health','Insurance', 'Mobile'],
     featured: true,
+     links: [
+      { label: 'Android', href:"https://play.google.com/store/apps/details?id=co.health.trunordd&hl=en_IN"},
+      { label: 'iOS', href:"https://apps.apple.com/in/app/healthpass-by-trunord/id1564393271"},
+    ],
+  },
+  {
+    slug: 'bumpedin',
+    number: '04',
+    title: 'BumpedIn',
+    tagline: 'Discover people near you.',
+    year: '07/2024',
+    status: 'Production',
+    blurb:
+      'A social app that shows you people in your community within a chosen radius — with real-time chat over sockets and background location tracking.',
+    tags: ['Social Media', 'Communication', 'Geolocation','Mobile'],
+    featured: true,
+    links: [
+      { label: 'Android', href:"https://play.google.com/store/apps/details?id=com.bumpedin.bumpedin&hl=en"},
+      { label: 'iOS', href:"https://apps.apple.com/in/app/6476984578"},
+    ],
   },
   {
     slug: 'pokedex-ai',
