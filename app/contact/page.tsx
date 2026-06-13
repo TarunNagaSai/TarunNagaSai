@@ -82,40 +82,6 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-
-        <div className="mt-32 border-t border-border pt-16 max-w-3xl">
-          <Reveal>
-            <p className="font-mono text-xs text-muted tracking-wider uppercase mb-6">
-              Available for
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 text-fg">
-              <div>
-                <p className="font-medium">AI pipeline engineering</p>
-                <p className="mt-2 text-subtle text-sm">
-                  vLLM, custom DAGs, GPU orchestration, RAG systems.
-                </p>
-              </div>
-              <div>
-                <p className="font-medium">Flutter mobile work</p>
-                <p className="mt-2 text-subtle text-sm">
-                  Production apps, native bridging, offline-first architecture.
-                </p>
-              </div>
-              <div>
-                <p className="font-medium">Full-stack product builds</p>
-                <p className="mt-2 text-subtle text-sm">
-                  Backend (NestJS, Laravel) + frontend + mobile, end-to-end.
-                </p>
-              </div>
-              <div>
-                <p className="font-medium">Technical consulting</p>
-                <p className="mt-2 text-subtle text-sm">
-                  Architecture reviews, AI feasibility, system design.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
       </Container>
     </div>
   );
