@@ -38,7 +38,7 @@ export function FeaturedWriting() {
                     <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-fg group-hover:text-accent transition-colors">
                       {a.title}
                     </h3>
-                    <p className="mt-3 text-subtle leading-relaxed">{a.teaser}</p>
+                    <p className="mt-3 text-justify text-subtle leading-relaxed">{a.teaser}</p>
                   </div>
                   <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 shrink-0 font-mono text-xs">
                     <span className="text-muted">{a.date}</span>

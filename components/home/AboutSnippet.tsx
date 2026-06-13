@@ -16,7 +16,7 @@ export function AboutSnippet() {
             <p className="text-2xl sm:text-3xl font-medium leading-snug tracking-tight text-fg">
               I bridge the gap between AI and Frontend by managing complete product lifecycle end-to-end.
             </p>
-            <p className="mt-8 text-base sm:text-lg text-subtle leading-relaxed">
+            <p className="mt-8 text-base sm:text-lg text-subtle leading-relaxed text-justify">
               Four years of Flutter taught me how to ship apps that millions of
               people can rely on. A year of LLM pipeline work taught me how to make
               GPUs translate sacred text without ever distorting a single word. I

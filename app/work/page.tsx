@@ -20,8 +20,8 @@ export default function WorkPage() {
           <h1 className="text-display font-medium tracking-tight">
             Everything I've built<span className="text-accent">.</span>
           </h1>
-          <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl">
-            From production AI pipelines to apps on the App Store — and the
+          <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl text-justify">
+            From production AI pipelines to apps on the App Store and the
             experimental work in between. Click any project to read the full story.
           </p>
         </div>

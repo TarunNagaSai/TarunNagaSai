@@ -41,7 +41,7 @@ export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
           {project.tagline}
         </p>
 
-        <p className="mt-8 text-base text-fg/85 leading-relaxed max-w-2xl">
+        <p className="mt-8 text-base text-fg/85 leading-relaxed max-w-2xl text-justify">
           {project.blurb}
         </p>
 

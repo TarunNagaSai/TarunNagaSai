@@ -61,7 +61,7 @@
     @apply max-w-prose text-fg/90 leading-relaxed;
   }
   .prose-custom p {
-    @apply mb-6;
+    @apply mb-6 text-justify;
   }
   .prose-custom h2 {
     @apply text-h2 font-medium mt-16 mb-4 text-fg;

@@ -159,7 +159,7 @@ function SlideBody({
       >
         &ldquo;
       </span>
-      <p className="text-xl sm:text-2xl md:text-3xl font-medium leading-snug tracking-tight text-fg">
+      <p className="text-xl sm:text-2xl md:text-3xl font-medium leading-snug tracking-tight text-fg text-justify">
         {quote}
       </p>
       <div className="mt-8 flex items-center gap-4">

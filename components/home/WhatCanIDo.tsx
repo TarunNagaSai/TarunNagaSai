@@ -16,7 +16,7 @@ export function MyServicesSnippet() {
             <p className="text-2xl sm:text-3xl font-medium leading-snug tracking-tight text-fg">
               I bridge the gap between AI and User by architecting complete software lifecycle.
             </p>
-            <p className="mt-8 text-base sm:text-lg text-subtle leading-relaxed">
+            <p className="mt-8 text-base sm:text-lg text-subtle leading-relaxed text-justify">
               Building an AI is just one side of the story. For it to reach
               users, it needs a product around it. The app, the backend, the
               interface, the database, the security, the production monitoring and the continues deployments. I build that whole journey.

@@ -20,7 +20,7 @@ export default function ServicesPage() {
           <h1 className="text-display font-medium tracking-tight">
             What I can do<span className="text-accent">?</span>
           </h1>
-          <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl">
+          <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl text-justify">
             I deliver the complete lifecycle. The intelligence, the product
             around it, and the systems underneath in a secured way. So an idea becomes
             something people admire.
@@ -41,7 +41,7 @@ export default function ServicesPage() {
                   <p className="mt-3 font-mono text-xs text-muted tracking-wide uppercase">
                     {service.tagline}
                   </p>
-                  <p className="mt-4 text-subtle leading-relaxed max-w-2xl">
+                  <p className="mt-4 text-subtle leading-relaxed max-w-2xl text-justify">
                     {service.description}
                   </p>
                 </div>
@@ -75,8 +75,8 @@ export default function ServicesPage() {
               <br/>
               <span className="text-subtle">Checkout my work</span>
             </h2>
-            <p className="mt-8 text-lg text-subtle max-w-2xl leading-relaxed">
-              Each project showcases different use cases that gave me experience in different domains 
+            <p className="mt-8 text-lg text-subtle max-w-2xl leading-relaxed text-justify">
+              Each project solves a different problem in a different domain, so whatever you have in mind, chances are I've built something close.
             </p>
             <div className="mt-12">
               <ArrowLink href="/work">My work</ArrowLink>

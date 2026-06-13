@@ -31,7 +31,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span className="font-mono text-xs text-muted">— {project.tagline}</span>
           </div>
 
-          <p className="mt-4 text-subtle leading-relaxed max-w-2xl">
+          <p className="mt-4 text-subtle leading-relaxed max-w-2xl text-justify">
             {project.blurb}
           </p>
 
