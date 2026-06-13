@@ -21,7 +21,7 @@ export default function WritingPage() {
           <h1 className="text-display font-medium tracking-tight">
             Notes from the work<span className="text-accent">.</span>
           </h1>
-          <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl">
+          <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl text-justify">
             Long-form pieces on what I've learned shipping production systems —
             AI pipelines, Flutter architecture, and the harder-to-name things
             about working with AI day-to-day.

@@ -42,7 +42,7 @@ const SKILLS = [
       'Dart',
       'ObjectBox',
       'Bloc / Cubit · GetX · AutoRoute',
-      'Firebase (Auth, FCM, Crashlytics, Remote Config, Realtime DB, Firebase AI)',
+      'All Firebase',
       'Method Channels (native bridging)',
       'HealthKit · Google Fit · Aktivo SDK',
       'RevenueCat · Patrol · Fastlane',
@@ -50,26 +50,18 @@ const SKILLS = [
   },
   {
     group: 'Backend',
-    items: ['NestJS', 'Prisma', 'Laravel', 'PHP 8.1+', 'REST API design', 'MySQL · PostgreSQL'],
+    items: ['NestJS', 'Prisma', 'Laravel', 'PHP 8.1+', 'REST API design', 'MySQL · PostgreSQL', 'Supabase'],
   },
   {
-    group: 'Frontend',
-    items: ['Svelte / SvelteKit', 'TypeScript', 'Tailwind CSS', 'React', 'Tauri', 'PWA (Service Workers, IndexedDB)'],
-  },
-  {
-    group: 'Systems / Low-level',
-    items: ['Rust', 'C ABI / FFI', 'GC algorithms (Mark & Sweep, Generational)', 'Dart VM internals'],
-  },
-  {
-    group: 'Currently learning',
+    group: 'Deployments',
     items: [
-      'ML math (linear algebra, probability)',
-      'Distributed training (FSDP · DeepSpeed)',
-      'LLM architecture (attention, tokenization)',
-      'Agentic systems (memory, planning, evals)',
-      'GGUF / Ollama model deployment',
+      'VPS / Server deployment (SSH · git · rsync)',
+      'Vercel',
+      'Railway',
+      'Google Cloud Platform (GCP)',
+      'Docker',
     ],
-  },
+  }
 ];
 
 export default function AboutPage() {
