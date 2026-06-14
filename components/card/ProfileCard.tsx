@@ -8,26 +8,29 @@ import { SITE } from '@/lib/site';
 
 const CAPABILITIES: { title: string; detail: string }[] = [
   {
-    title: 'AI / LLM Inference',
+    title: 'Ship AI from MVP to production',
     detail:
-      'vLLM (PagedAttention, KV cache), Gemma 4 31B full-precision, RunPod GPU infra, custom DAG orchestration with GPU mutex gating',
+      'Take your AI idea from a quick proof-of-value MVP to a hardened system real users can rely on.',
   },
   {
-    title: 'Fine-Tuning & Evals',
+    title: 'Chatbots & assistants over your own data',
     detail:
-      'LoRA/QLoRA via Unsloth + TRL, custom task-specific eval suites (ROUGE-L, BERTScore, EM), HuggingFace Hub deployment',
+      'AI that answers from your documents and knowledge, with sources, instead of generic replies.',
   },
   {
-    title: 'RAG & Vector Search',
-    detail: 'LangChain, ChromaDB, HuggingFace embeddings, Google Gemini API',
+    title: 'Automations & AI agents',
+    detail:
+      'Agents that connect to your tools, make decisions, and finish multi-step tasks so hours of manual work run on their own.',
   },
   {
-    title: 'Data Engineering / ETL',
-    detail: 'High-throughput semantic-mapping pipelines, algorithmic QA, multilingual NLP',
+    title: 'Reliable, cost-controlled pipelines',
+    detail:
+      'High-volume AI processing with quality checks built in and zero wasted spend on idle GPUs.',
   },
   {
-    title: 'Full-Stack Delivery',
-    detail: 'Flutter (4+ yrs, 4 production apps), NestJS, Laravel, Svelte, TypeScript',
+    title: 'The full product, end to end',
+    detail:
+      'Mobile, backend, and frontend delivered around the AI, so you hire one engineer instead of a whole team.',
   },
 ];
 
@@ -45,8 +48,8 @@ const CHIPS = [
 ];
 
 const STATS = [
-  { value: '60,000+', label: 'verses translated' },
-  { value: '54,409', label: 'word replacements' },
+  { value: '100,000+', label: 'verses translated' },
+  { value: '4', label: 'languages shipped' },
   { value: '0%', label: 'error rate' },
 ];
 
@@ -54,15 +57,15 @@ const WORK: { name: string; detail: string }[] = [
   {
     name: 'Horeb',
     detail:
-      'offline-first multilingual Flutter Bible app (ObjectBox, Bloc, Firebase). 64% Dart heap reduction via architecture migration.',
+      'offline-first multilingual Bible app for iOS & Android; rebuilt the data layer to cut memory use 64% and render 3x faster.',
   },
   {
     name: 'HealthPass by TruNord',
-    detail: 'App Store health app; native HealthKit & Google Fit bridging via Flutter Method Channels.',
+    detail: 'health app live on the App Store, syncing real activity data from Apple Health & Google Fit.',
   },
   {
     name: 'Gemma 4 Pokémon Fine-Tune',
-    detail: 'end-to-end LoRA training (val loss 0.164), custom eval suite, models published to HuggingFace Hub.',
+    detail: 'trained a custom domain model end to end and published it, proving the full fine-tuning lifecycle.',
   },
 ];
 
@@ -96,33 +99,40 @@ export function ProfileCard() {
       />
 
       <div className="relative z-10">
-        {/* Header */}
+        {/* Header — avatar with name/title beside it to save vertical space */}
         <div className="px-10 pt-11">
-          {/* Drop your photo at public/headshot.jpg to replace the placeholder ring */}
-          <img
-            src="/headshot.jpg"
-            alt="Tarun NagaSai"
-            width={64}
-            height={64}
-            className="h-16 w-16 rounded-full border border-border object-cover ring-1 ring-accent/30"
-          />
-          <h1 className="mt-6 text-[30px] font-bold leading-[1.05] tracking-tight text-fg">
-            Tarun NagaSai
-          </h1>
-          <p className="mt-1.5 text-[15px] font-medium text-accent">
-            AI / LLM Systems Engineer &amp; Full-Stack Developer
-          </p>
-          <p className="mt-2 text-[13px] text-muted">Vishakhapatnam, India</p>
+          <div className="flex items-center gap-5">
+            {/* Drop your photo at public/headshot.jpg to replace the placeholder ring */}
+            <div className="h-[76px] w-[76px] shrink-0 overflow-hidden rounded-full border border-border ring-1 ring-accent/30">
+              <img
+                src="/headshot.jpg"
+                alt="Tarun NagaSai"
+                width={76}
+                height={76}
+                className="h-full w-full origin-center scale-[1.8] object-cover object-[55%_30%]"
+              />
+            </div>
+            <div>
+              <h1 className="text-[26px] font-bold leading-[1.1] tracking-tight text-fg">
+                Tarun NagaSai
+              </h1>
+              <p className="mt-1 text-[14px] font-medium text-accent">
+                AI Product Engineer
+              </p>
+              <p className="mt-1 text-[13px] text-muted">Vishakhapatnam, India</p>
+            </div>
+          </div>
         </div>
 
         <div className="mx-10 mt-7 hairline" />
 
         {/* Pitch */}
         <p className="px-10 pt-6 text-[15px] leading-[1.7] text-fg">
-          I architect and ship{' '}
-          <strong className="font-semibold text-white">production LLM inference pipelines end-to-end</strong>{' '}
-          — and deliver the complete product around them (mobile, backend, frontend). Most teams need two or
-          more engineers for this. I do it solo.
+          A lot of AI demos look great but break once real users start using them.{' '}
+          <strong className="font-semibold text-white">I build AI that actually works in the real world</strong>{' '}
+          — taking your idea from a working MVP to a finished product that stays accurate, stays online, and
+          doesn&apos;t waste money on idle GPUs. And I build the full product around it, so you hire one
+          engineer instead of a team.
         </p>
 
         {/* Hire me */}
@@ -135,9 +145,9 @@ export function ProfileCard() {
           </a>
         </div>
 
-        {/* Core Capabilities */}
+        {/* What I can do for you */}
         <div className="px-10 pt-7">
-          <SectionLabel>Core Capabilities</SectionLabel>
+          <SectionLabel>What I can do for you</SectionLabel>
           <div className="mt-4 space-y-3">
             {CAPABILITIES.map((c) => (
               <div key={c.title}>
@@ -168,9 +178,10 @@ export function ProfileCard() {
               Yahuah AI Translation Pipeline
             </h2>
             <p className="mt-2.5 text-[13px] leading-[1.65] text-subtle">
-              Production sacred-text translation across French, German, Italian &amp; Brazilian Portuguese.
-              Custom ETL over 31,000+ verses, Ratcliff/Obershelp matching, DAG orchestration on RunPod with
-              gated GPU mutex, async egress with auto-termination for zero GPU waste.
+              A client needed their scripture translated into four languages without changing the meaning of a
+              single word. I built a system that did it all automatically, checked its own work to catch any
+              mistakes, and only ran the expensive AI hardware while it was actually working, so no money was
+              wasted.
             </p>
             <div className="mt-5 flex">
               {STATS.map((s) => (

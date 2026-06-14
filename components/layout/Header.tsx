@@ -14,7 +14,7 @@ const NAV = [
   { href: '/writing', label: 'Writing' },
   // { href: '/research', label: 'Research' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Hire me' },
 ];
 
 const EASE = [0.16, 1, 0.3, 1] as const;

@@ -9,7 +9,7 @@ export function ContactStrip() {
       <Container size="wide">
         <Reveal>
           <p className="font-mono text-xs text-muted tracking-wider uppercase mb-6">
-            Get in touch
+            Hire me
           </p>
           <h2 className="text-h1 font-medium tracking-tight max-w-3xl">
             Have an idea worth building<span className="text-accent">?</span>{' '}

@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 const LINKS = [
   { label: 'Email', value: SITE.display.email, href: mailto, primary: true },
-  { label: 'GitHub', value: SITE.display.github, href: SITE.social.github },
   { label: 'LinkedIn', value: SITE.display.linkedin, href: SITE.social.linkedin },
-  { label: 'Medium', value: SITE.display.medium, href: SITE.social.medium },
+  { label: 'X', value: SITE.display.x, href: SITE.social.x },
+  { label: 'GitHub', value: SITE.display.github, href: SITE.social.github },
   { label: 'Substack', value: SITE.display.substack, href: SITE.social.substack },
 ];
 
@@ -23,7 +23,7 @@ export default function ContactPage() {
       <Container size="wide">
         <div className="mb-20 max-w-3xl">
           <p className="font-mono text-xs text-muted tracking-wider uppercase mb-4">
-            Contact
+            Hire me
           </p>
           <h1 className="text-display font-medium tracking-tight">
             Let's build something<span className="text-accent">.</span>
