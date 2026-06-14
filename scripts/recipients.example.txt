@@ -1,0 +1,7 @@
+# One recipient per line. Either just the email, or "email, Name".
+# Lines starting with # are ignored. Copy this to recipients.txt and edit.
+# Already-sent addresses are skipped automatically on re-runs.
+
+jane@example.com, Jane Doe
+john@example.com
+hello@startup.io
