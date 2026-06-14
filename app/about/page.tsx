@@ -53,6 +53,11 @@ const SKILLS = [
     ],
   },
   {
+    group: 'Frontend',
+    anchor: 'frontend',
+    items: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Tauri', 'PWA (Service Workers, IndexedDB)'],
+  },
+  {
     group: 'Backend',
     anchor: 'backend',
     items: ['NestJS', 'Prisma', 'Laravel', 'PHP 8.1+', 'REST API design', 'MySQL · PostgreSQL', 'Supabase'],
@@ -68,11 +73,7 @@ const SKILLS = [
       'Docker',
     ],
   },
-  {
-    group: 'Frontend',
-    anchor: 'frontend',
-    items: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Tauri', 'PWA (Service Workers, IndexedDB)'],
-  },
+  
 ];
 
 export default function AboutPage() {
