@@ -12,7 +12,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     title: 'about-me/skill.md',
-    href: "https://tarunnagasai.substack.com/p/about-meskillmd",
+    href: "https://medium.com/@tarunnagasai007/about-me-skill-md-af35eb589de6?postPublishedType=repub",
     date: '05/2026',
     teaser:
       'A skill that know everything about me and grows with me',
@@ -21,7 +21,7 @@ export const articles: Article[] = [
   },
   {
     title: 'Scaling Sacred Texts: Building a High-Throughput Translation Pipeline with Gemma 4 31B and vLLM',
-    href: "https://substack.com/home/post/p-197830805",
+    href: "https://medium.com/@tarunnagasai007/high-throughput-translation-pipeline-with-gemma-4-31b-and-vllm-4cb510c02e94",
     date: '05/2026',
     teaser:
       'A deep engineering walkthrough of the Yahuah AI pipeline — how I translated 60,000 verses with zero errors using a custom DAG, GPU mutex gating, and a three-layer noise filter that caught 7,300+ false positives.',

@@ -12,7 +12,7 @@ const SOCIALS = [
   { label: 'GitHub',   href: SITE.social.github,   icon: GithubIcon   },
   { label: 'Hugging Face', href: SITE.social.huggingFace, icon: HuggingFaceIcon },
   { label: 'LinkedIn', href: SITE.social.linkedin,  icon: LinkedInIcon },
-  { label: 'Substack', href: SITE.social.substack,  icon: SubstackIcon },
+  // { label: 'Substack', href: SITE.social.substack,  icon: SubstackIcon },
   { label: 'Medium',   href: SITE.social.medium,    icon: MediumIcon   },
   { label: 'X',        href: SITE.social.x,         icon: XIcon        },
 ].filter((s) => s.href);
