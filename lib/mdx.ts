@@ -9,14 +9,15 @@ const RESEARCH_DIR = path.join(process.cwd(), 'content', 'research');
 const WORDS_PER_MINUTE = 200;
 
 /**
- * Estimated read time (in whole minutes) for a research article, computed from
- * its raw MDX at build time. Strips JSX/HTML tags, code, and markdown symbols so
- * only readable prose is counted. Returns null when the body file is absent.
+ * Word count + estimated read time (in whole minutes) for a research article,
+ * computed from its raw MDX at build time. Strips JSX/HTML tags, code, and
+ * markdown symbols so only readable prose is counted. Returns null when the body
+ * file is absent.
  */
-export async function getResearchReadingMinutes(
+export async function getResearchReadStats(
   slug: string,
   topicSlug: string,
-): Promise<number | null> {
+): Promise<{ words: number; minutes: number } | null> {
   const filePath = path.join(RESEARCH_DIR, slug, `${topicSlug}.mdx`);
   try {
     const raw = await fs.readFile(filePath, 'utf8');
@@ -25,7 +26,7 @@ export async function getResearchReadingMinutes(
       .replace(/<[^>]+>/g, ' ') // JSX / HTML tags
       .replace(/[#>*_\-!\[\]()]/g, ' '); // markdown punctuation
     const words = text.split(/\s+/).filter(Boolean).length;
-    return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
+    return { words, minutes: Math.max(1, Math.round(words / WORDS_PER_MINUTE)) };
   } catch {
     return null;
   }

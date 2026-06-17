@@ -5,7 +5,7 @@ import { Container } from '@/components/layout/Container';
 import { BackLink } from '@/components/ui/BackLink';
 import { ArrowLink } from '@/components/ui/ArrowLink';
 import { research, getResearchTopic } from '@/lib/research';
-import { getResearchReadingMinutes } from '@/lib/mdx';
+import { getResearchReadStats } from '@/lib/mdx';
 import { SITE } from '@/lib/site';
 
 export function generateStaticParams() {
@@ -64,10 +64,7 @@ export default async function ResearchArticlePage({
     Content = null;
   }
 
-  const readingMinutes = await getResearchReadingMinutes(
-    params.slug,
-    params.topic,
-  );
+  const readStats = await getResearchReadStats(params.slug, params.topic);
 
   const currentIndex = series.topics.findIndex((t) => t.slug === params.topic);
   const next =
@@ -88,6 +85,12 @@ export default async function ResearchArticlePage({
     dateModified: topic.updatedAt ?? topic.publishedAt,
     image: `${url}/opengraph-image`,
     inLanguage: 'en-US',
+    ...(readStats
+      ? {
+          wordCount: readStats.words,
+          timeRequired: `PT${readStats.minutes}M`,
+        }
+      : {}),
     isPartOf: {
       '@type': 'CreativeWorkSeries',
       name: series.title,
@@ -119,7 +122,7 @@ export default async function ResearchArticlePage({
                 day: 'numeric',
               })}
             </time>
-            {readingMinutes ? <> · {readingMinutes} min read</> : null}
+            {readStats ? <> · {readStats.minutes} min read</> : null}
           </p>
           <h1 className="text-display font-medium tracking-tight">
             {topic.title}
