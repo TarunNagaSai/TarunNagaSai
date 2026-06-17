@@ -47,10 +47,44 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE.url}/#person`,
+      name: SITE.name,
+      url: SITE.url,
+      email: SITE.email,
+      jobTitle: 'Agentic AI Engineer & full-stack developer',
+      description:
+        'I build LLM inference pipelines and the products people use to talk to them.',
+      sameAs: [
+        SITE.social.github,
+        SITE.social.linkedin,
+        SITE.social.medium,
+        SITE.social.x,
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      publisher: { '@id': `${SITE.url}/#person` },
+      inLanguage: 'en-US',
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1 relative z-10">{children}</main>
         <Footer />

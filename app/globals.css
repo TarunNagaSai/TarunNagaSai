@@ -61,7 +61,7 @@
     @apply max-w-prose text-fg/90 leading-relaxed;
   }
   .prose-custom p {
-    @apply mb-6 text-justify;
+    @apply mb-6 text-left;
   }
   .prose-custom h2 {
     @apply text-h2 font-medium mt-16 mb-4 text-fg;
@@ -95,6 +95,12 @@
   }
   .prose-custom hr {
     @apply border-border my-12;
+  }
+  .prose-custom img {
+    @apply rounded-lg border border-border my-8 w-full h-auto;
+  }
+  .prose-custom figcaption {
+    @apply mt-3 text-sm text-muted text-center;
   }
 }
 

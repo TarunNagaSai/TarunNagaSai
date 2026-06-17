@@ -14,7 +14,7 @@ const LINKS = [
   { label: 'LinkedIn', value: SITE.display.linkedin, href: SITE.social.linkedin },
   { label: 'X', value: SITE.display.x, href: SITE.social.x },
   { label: 'GitHub', value: SITE.display.github, href: SITE.social.github },
-  { label: 'Substack', value: SITE.display.substack, href: SITE.social.substack },
+  // { label: 'Substack', value: SITE.display.substack, href: SITE.social.substack },
 ];
 
 export default function ContactPage() {

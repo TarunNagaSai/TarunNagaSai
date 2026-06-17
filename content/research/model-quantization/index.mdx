@@ -1,0 +1,30 @@
+## Introduction
+
+LLMs have become one of the most important tools in our day-to-day life, and as they grow, so do the hardware requirements to run them. Running even a 12B model locally demands a huge amount of RAM. To make LLMs run on any kind of hardware — including edge devices — we need a way to shrink the model. That process of shrinking a model is called quantization. In this series, I explain everything from the basic fundamentals all the way to the advanced techniques used in quantization.
+
+## What is Quantization?
+
+Quantization is a technique for scaling a high-precision model down into a low-precision one, so it can run on consumer hardware. It does this by trading away a little of the model's output quality. Think of it like scaling a 4K image down to 1080p — the actual content of the image stays the same, just with a smaller data footprint.
+
+All the data in a model is really just arithmetic numbers, and each one is stored in one of a few datatypes: Int, Float, and so on. Each datatype comes in different sizes — int4, int6, int8, FP8, FP16, FP32 (the numbers represent their bit sizes). To store the high-precision decimal numbers an AI model needs, the standard datatype is FP32.
+
+**Let's compare the size of a 7B-parameter model across different datatypes**
+
+- FP32 = \~28 GB
+- FP16 = \~7 GB
+- FP8 = \~3.5 GB
+
+The model's size shifts linearly based on the datatype.
+
+To understand how an FP32 value is converted into FP16 or FP8, you first need to understand how a float datatype actually stores its data.
+
+<Topic slug="IEEE-754-float-standard" />
+
+From there, the series builds on this foundation and works through how each of these datatypes represents a number:
+
+- FP32
+- FP16
+- BF16
+- FP8 E4M3
+- FP8 E5M2
+- FP4 E2M1

@@ -1,0 +1,1 @@
+- [Research SEO / canonical](research-seo-canonical.md) — /research blogs are canonical to his own domain, not cross-posted; SEO built around owning them on-site

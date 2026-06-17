@@ -22,17 +22,17 @@ Static data lives in `lib/` and is the source of truth for everything rendered:
 - `lib/site.ts` — `SITE` constant: name, URLs, email, social handles, display strings, stats. **Update personal info here only** — it propagates to Hero, Footer, Contact, metadata, etc.
 - `lib/projects.ts` — `projects[]` array (work entries) + `getProject(slug)` / `getFeaturedProjects()` helpers. Each project has a `slug` that must match a file in `content/projects/<slug>.mdx`.
 - `lib/articles.ts` — same shape as projects but for writing entries; external links only (Medium, etc.), no MDX bodies.
-- `lib/research.ts` — `research[]` (`ResearchProject`) + `getResearchProject(slug)`. Listing-only: no MDX bodies, no `[slug]` route. Some slugs intentionally overlap with `lib/projects.ts` (e.g. `rust-gc-vm`).
+- `lib/research.ts` — `research[]` (`ResearchProject`) + `getResearchProject(slug)` + `getResearchTopic(slug, topicSlug)`. Each research entry is a **series**: it carries a `topics[]` array (`ResearchTopic`), and each topic maps to an MDX body under `content/research/<slug>/<topicSlug>.mdx`. The series root (`/research/[slug]`) lists topics; each topic has its own article route (`/research/[slug]/[topic]`). MDX bodies are body-only (no frontmatter) and optional — topic metadata in the data file is canonical.
 - `lib/services.ts` — `services[]` (`Service`) rendered on `/services` and the home snippet. Copy is outcome-focused on purpose — keep tool/tech names out, the work itself is the proof. `skillAnchor` ties a service to an about-page skill.
 - `lib/testimonials.ts` — `testimonials[]` for the home carousel. **Currently placeholders** — replace with real quotes before going public; keep each ~25–55 words or the section's visual rhythm breaks.
 - `lib/mdx.ts` — async helpers `loadCaseStudy(slug)` and `listCaseStudySlugs()` reading from `content/projects/`. Currently the `[slug]` route imports the MDX module directly (`await import('@/content/projects/${slug}.mdx')`) rather than going through this helper.
 - `lib/utils.ts` — `cn()` for Tailwind class merging (clsx + tailwind-merge).
 
-Adding a project = append to `lib/projects.ts` + create `content/projects/<slug>.mdx`. Adding an article = append to `lib/articles.ts` only. Research, services, and testimonials are each a single data file with no MDX bodies and no per-item route.
+Adding a project = append to `lib/projects.ts` + create `content/projects/<slug>.mdx`. Adding an article = append to `lib/articles.ts` only. Adding a research series = append to `lib/research.ts` (with its `topics[]`); each topic optionally gets a body at `content/research/<slug>/<topic>.mdx`. Services and testimonials are each a single data file with no MDX bodies and no per-item route.
 
 ### Routing
 
-`app/` (App Router). Routes: `/`, `/about`, `/contact`, `/work`, `/work/[slug]`, `/writing`, `/research`, `/services`, `/card`, `/not-found`. `app/work/[slug]/page.tsx` uses `generateStaticParams()` over `projects[]` so every slug is prerendered at build time. The dynamic page tries to import the MDX module by slug and falls back to a "coming soon" message if the file is absent — case-study MDX is **optional**, the project listing is canonical. `/card` is a noindex profile-card page (`robots: { index: false }`).
+`app/` (App Router). Routes: `/`, `/about`, `/contact`, `/work`, `/work/[slug]`, `/writing`, `/research`, `/research/[slug]` (series root), `/research/[slug]/[topic]` (article), `/services`, `/card`, `/not-found`. `app/work/[slug]/page.tsx` uses `generateStaticParams()` over `projects[]` so every slug is prerendered at build time. The dynamic page tries to import the MDX module by slug and falls back to a "coming soon" message if the file is absent — case-study MDX is **optional**, the project listing is canonical. `/card` is a noindex profile-card page (`robots: { index: false }`).
 
 `app/icon.tsx` and `app/opengraph-image.tsx` generate the favicon and OG image at build time via Next's image generation APIs.
 

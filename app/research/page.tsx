@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
 import { Reveal } from '@/components/ui/Reveal';
 import { Tag } from '@/components/ui/Tag';
 import { research } from '@/lib/research';
+import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Research',
   description:
     'Experimental work — agentic systems, language runtimes, and the questions I am exploring next.',
+  alternates: { canonical: `${SITE.url}/research` },
 };
 
 export default function ResearchPage() {
@@ -20,19 +23,22 @@ export default function ResearchPage() {
             Research
           </p>
           <h1 className="text-display font-medium tracking-tight">
-            What I'm exploring next<span className="text-accent">.</span>
+            What I'm Learned<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl">
-            Side investigations into the systems behind the systems — agent loops
-            built from scratch, garbage collectors, and language runtimes. Less
-            polished than the production work, but where the next chapter starts.
+            I investigate into the systems behind the systems. I blog everything I learned into a series of blogs.
+            From basic fundamentals to all the may to how a software reached to your hand. I
+            built from scratch, document everything and give access runnable software by the end of the series.
           </p>
         </div>
 
         <ul className="space-y-0">
           {research.map((r, i) => (
             <Reveal key={r.slug} as="li" delay={Math.min(i * 0.04, 0.2)}>
-              <div className="group block border-t border-border py-10">
+              <Link
+                href={`/research/${r.slug}`}
+                className="group block border-t border-border py-10"
+              >
                 <div className="grid grid-cols-12 gap-4 sm:gap-8">
                   <div className="col-span-12 sm:col-span-1 font-mono text-xs text-muted pt-2">
                     {String(i + 1).padStart(2, '0')}
@@ -58,7 +64,7 @@ export default function ResearchPage() {
                     <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
                 </div>
-              </div>
+              </Link>
             </Reveal>
           ))}
         </ul>
