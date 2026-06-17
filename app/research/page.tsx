@@ -23,7 +23,7 @@ export default function ResearchPage() {
             Research
           </p>
           <h1 className="text-display font-medium tracking-tight">
-            What I'm Learned<span className="text-accent">.</span>
+            What I've Learned<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-subtle leading-relaxed max-w-2xl">
             I investigate into the systems behind the systems. I blog everything I learned into a series of blogs.
