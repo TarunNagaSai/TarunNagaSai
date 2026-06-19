@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SITE } from '@/lib/site';
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1 relative z-10">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
