@@ -33,7 +33,7 @@ export const SITE = {
     yearsBuilding: '4+',
     appsOnAppStores: '4',
     aiProjects: '4',
-    websitesBuilt: '2',
+    websitesBuilt: '3',
   },
 
   /** Specific external URLs referenced from project / article data. */
