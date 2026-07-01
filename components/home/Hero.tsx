@@ -57,8 +57,8 @@ export function Hero() {
           className="mt-14 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-3 sm:gap-y-4 sm:gap-x-10 font-mono text-xs text-muted"
         >
           <Stat label="Years of Engineering" value={SITE.stats.yearsBuilding} />
-          <Stat label="apps on app stores" value={SITE.stats.appsOnAppStores} animate startDelay={700} />
           <Stat label="AI project Build" value={SITE.stats.aiProjects} animate startDelay={1000} />
+          <Stat label="apps on app stores" value={SITE.stats.appsOnAppStores} animate startDelay={700} />
           <Stat label="websites live" value={SITE.stats.websitesBuilt} animate startDelay={850} />
         </motion.div>
       </Container>

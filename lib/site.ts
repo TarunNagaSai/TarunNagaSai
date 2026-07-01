@@ -32,7 +32,7 @@ export const SITE = {
   stats: {
     yearsBuilding: '4+',
     appsOnAppStores: '4',
-    aiProjects: '2',
+    aiProjects: '4',
     websitesBuilt: '2',
   },
 
