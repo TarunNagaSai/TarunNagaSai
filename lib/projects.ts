@@ -17,9 +17,26 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+    {
+    slug: 'atlas',
+    number: '01',
+    title: 'Atlas',
+    tagline: 'Agentic financial research platform over Gemini.',
+    year: '07/2026',
+    status: 'Active',
+    blurb:
+      'A full-stack RAG platform for financial document intelligence. Upload financial PDFs, index them into a pgvector store with hybrid search, then interrogate them through a streaming ReAct agent that plans, retrieves, and reasons — all visible live in the UI.',
+    tags: ['Agentic', 'Gen AI', 'RAG','Gemini'],
+    featured: true,
+    links: [
+      {
+        "label": "website",
+        "href":"https://atlas.avipra.com"
+      },],
+  },
   {
     slug: 'yahuah-bible-platform',
-    number: '01',
+    number: '02',
     title: 'Yahuah Bible Platform',
     tagline: 'An AI translation system for sacred text.',
     year: '03/2026',
@@ -46,18 +63,6 @@ export const projects: Project[] = [
         "href":"https://apps.microsoft.com/detail/9n8p3vx2xs5j?hl=en-gb&gl=IN"
       }
     ],
-  },
-  {
-    slug: 'atlas',
-    number: '02',
-    title: 'Atlas',
-    tagline: 'Agentic financial research platform over Gemini.',
-    year: '07/2026',
-    status: 'Active',
-    blurb:
-      'A full-stack RAG platform for financial document intelligence. Upload financial PDFs, index them into a pgvector store with hybrid search, then interrogate them through a streaming ReAct agent that plans, retrieves, and reasons — all visible live in the UI.',
-    tags: ['Gen AI', 'RAG', 'Agentic', 'Gemini'],
-    featured: true,
   },
   {
     slug: 'horeb',
