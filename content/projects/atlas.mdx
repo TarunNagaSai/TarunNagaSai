@@ -1,0 +1,105 @@
+## The story
+
+Every time I built something with an LLM, I was working around the same
+constraint: the model only knows what it was trained on. For financial
+analysis — earnings calls, 10-Ks, analyst reports — that's useless. The
+numbers change every quarter. The company you're researching might not
+even be in the training data.
+
+The standard answer is RAG: retrieve relevant passages, hand them to the
+model, get a grounded answer. But off-the-shelf RAG is shallow. A single
+vector search over a flat index misses a lot. I wanted to understand what
+a *real* retrieval pipeline looks like — one that earns its answers rather
+than guessing at them.
+
+Atlas is that research platform. I built it from the ground up to be the
+place where I learn and apply every layer of modern RAG and agentic
+reasoning — not by wrapping a library, but by understanding each moving
+part well enough to have built it myself.
+
+## What I built
+
+A full-stack platform in two halves:
+
+**Backend** — FastAPI service that ingests financial documents and answers
+questions about them through a streaming ReAct agent over Google Gemini.
+
+**Frontend** — Next.js 16 chat UI that streams the agent's full reasoning
+loop live: plan → thoughts → tool calls → answer, all visible in a
+collapsible "thinking" panel as they happen.
+
+## How the retrieval pipeline works
+
+Most RAG demos do one thing: embed a query, find the nearest chunk, return
+it. Atlas does this in layers.
+
+**Ingestion.** The PDF loader detects two-column layouts (common in
+financial reports) by measuring the gap between text regions, then crops
+each column separately so content from adjacent columns never gets
+interleaved. Each page becomes a *parent document*; overlapping sentence
+windows within it become *children*.
+
+**Hybrid search.** When a query arrives, it hits two indexes at once:
+- Dense search over pgvector (`<=>` cosine) using Gemini embeddings
+- Lexical search via BM25, run in-memory over tokenized chunks stored in
+  a `bm25_tokens` column — the same tokenizer runs at ingest time and
+  query time, so there's no drift
+
+The two result sets are fused with Reciprocal Rank Fusion. Neither method
+alone is best: dense search catches semantic synonyms; BM25 catches exact
+ticker symbols, accounting terms, and proper nouns. RRF takes the best of
+both without needing to tune a weight.
+
+**Reranking.** Hybrid search casts a wide net (say, top 20 candidates).
+A cross-encoder reranker then rescores them for *answer usefulness*
+specifically and keeps only the top 5. Wide net first, sharp precision
+last.
+
+**Parent-document retrieval.** The reranker returns child chunks (short
+windows, good for matching). But the agent gets the *full parent page*
+instead — so it has complete context around every figure it cites, not
+just the sentence that happened to match.
+
+## How the agent loop works
+
+The agent isn't a single model call. It's a loop built on Gemini's native
+function calling:
+
+**Planning turn.** Before the loop starts, a tool-less turn runs where the
+model reasons about the question: what is being asked, what it needs to
+find, how it will approach it. That plan streams to the UI live (the
+"thinking" panel's first entry) and is prepended to every subsequent turn
+so the model's own reasoning guides it.
+
+**ReAct loop.** Each turn the model either calls a tool or writes the final
+answer. Two tools are available:
+
+- `retrieve` — runs the full hybrid + rerank pipeline and returns numbered,
+  cited passages
+- `graph_search` — traverses a per-book knowledge graph for structural or
+  thematic questions (`local` mode walks entity connections; `global` mode
+  ranks pre-computed community summaries)
+
+The loop continues until the model stops calling tools. If it somehow
+hasn't converged by the hop limit, tools are withheld on the final turn
+and a force-answer prompt compels it to answer from what it has already
+gathered — no infinite loops, no silent failures.
+
+**Cancellation.** Two gates: a per-session registry (the backend marks a
+session cancelled when `POST /chat/cancel` arrives) checked at the top of
+every hop, and a token-level check inside the stream so a stop request
+halts generation within one token.
+
+## Stack
+
+**Backend** — FastAPI, Python 3.12, Google Gemini (generation +
+embeddings), pgvector on Supabase (HNSW index), BM25 (in-memory, `rank_bm25`),
+Logfire + Langfuse observability, tenacity retry, uv.
+
+**Frontend** — Next.js 16, React 19, TypeScript, Tailwind 4, Bun.
+
+**Architecture** — SSE streaming throughout; typed event vocabulary
+(`plan`, `thought`, `tool_call`, `tool_result`, `usage`) so the UI can
+render each reasoning step as it arrives. Two history modes: DB-backed
+(server stores and serves transcripts) or client-side (localStorage only,
+no backend dependency).

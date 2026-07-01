@@ -48,8 +48,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'horeb',
+    slug: 'atlas',
     number: '02',
+    title: 'Atlas',
+    tagline: 'Agentic financial research platform over Gemini.',
+    year: '07/2026',
+    status: 'Active',
+    blurb:
+      'A full-stack RAG platform for financial document intelligence. Upload financial PDFs, index them into a pgvector store with hybrid search, then interrogate them through a streaming ReAct agent that plans, retrieves, and reasons — all visible live in the UI.',
+    tags: ['Gen AI', 'RAG', 'Agentic', 'Gemini'],
+    featured: true,
+  },
+  {
+    slug: 'horeb',
+    number: '03',
     title: 'Horeb',
     tagline: 'Offline-first Bible app for Flutter.',
     year: '04/2026',
@@ -70,7 +82,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'healthpass',
-    number: '03',
+    number: '04',
     title: 'HealthPass by TruNord',
     tagline: 'Health & fitness app on the App Store.',
     year: '04/2024',
@@ -86,7 +98,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'bumpedin',
-    number: '04',
+    number: '05',
     title: 'BumpedIn',
     tagline: 'Discover people near you.',
     year: '07/2024',
@@ -102,7 +114,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'pokedex-ai',
-    number: '05',
+    number: '06',
     title: 'PokéDex AI',
     tagline: 'My first LLM project.',
     year: '06/2025',
@@ -117,7 +129,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'flutter-animations',
-    number: '06',
+    number: '07',
     title: 'Flutter Animations',
     tagline: 'Open-source animation patterns.',
     year: '12/2025',
